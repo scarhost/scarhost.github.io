@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Entertainment Website</title>
+  <style>
+    /* Add your custom CSS styles here */
+    body {
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      color: rgb(0, 0, 0);
+      background-color: #ffffff;
+      padding: 20px;
+      margin: 0;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .joke-container {
+      background-color: #fff;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 600px;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .joke {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .punchline {
+      font-weight: bold;
+    }
+
+    .refresh-btn {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+      max-width: 200px;
+    }
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <h1>Welcome to the Entertainment Website</h1>
+
+  <div class="joke-container">
+    <p class="joke">Click the buttons below to get a random joke:</p>
+  </div>
+
+  <button class="refresh-btn" onclick="getRandomHindiJoke()">Get Random Hindi Joke</button>
+  <button class="refresh-btn" onclick="getRandomEnglishJoke()">Get Random English Joke</button>
+
+  <script>
+    var hindiJokes = [
+      {
+        question: "पप्पु : क्या तुम्हारा बेटा भी इंजीनियर बन गया?",
+        punchline: "जप्पु : अरे नहीं, वो तो बच्चपन से ही इंजीनियर था।"
+      },
+      // Add more Hindi jokes here
+    ];
+
+    var englishJokes = [
+      {
+        question: "Q: Why don't scientists trust atoms?",
+        punchline: "A: Because they make up everything!"
+      },
+      // Add more English jokes here
+    ];
+
+    function getRandomHindiJoke() {
+      var jokeIndex = Math.floor(Math.random() * hindiJokes.length);
+      var joke = hindiJokes[jokeIndex];
+
+      displayJoke(joke);
+    }
+
+    function getRandomEnglishJoke() {
+      var jokeIndex = Math.floor(Math.random() * englishJokes.length);
+      var joke = englishJokes[jokeIndex];
+
+      displayJoke(joke);
+    }
+
+    function displayJoke(joke) {
+      var jokeContainer = document.querySelector('.joke-container');
+      var jokeElement = document.createElement('p');
+      var punchlineElement = document.createElement('p');
+
+      jokeElement.classList.add('joke');
+      punchlineElement.classList.add('punchline');
+
+      jokeElement.textContent = joke.question;
+      punchlineElement.textContent = joke.punchline;
+
+      jokeContainer.innerHTML = '';
+      jokeContainer.appendChild(jokeElement);
+      jokeContainer.appendChild(punchlineElement);
+    }
+  </script>
+</body>
+</html>
