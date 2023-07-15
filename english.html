@@ -1,81 +1,306 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>English Understandings - Coming Soon</title>
+  <title>English Essays</title>
   <style>
+    /* Add your custom CSS styles here */
     body {
-      background-color: #f2f2f2;
       font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
       margin: 0;
       padding: 0;
     }
-
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: center;
-      padding: 50px;
-    }
-
-    h1 {
-      color: #333333;
-      font-size: 32px;
-      margin-bottom: 20px;
-    }
-
-    p {
-      color: #666666;
-      font-size: 18px;
-      margin-bottom: 40px;
-    }
-
+    
     .navbar {
-      background-color: #333333;
-      color: #ffffff;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 50px;
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      justify-content: flex-start;
-      padding: 0 20px;
+      transition: all 0.3s ease;
     }
-
-    .navbar a {
-      color: #ffffff;
-      text-decoration: none;
+    
+    .navbar:hover {
+      background-color: #555;
+    }
+    
+    .navbar .logo {
+      font-size: 24px;
+      font-weight: bold;
+    }
+    
+    .nav-items {
+      display: flex;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .nav-item {
       margin-right: 20px;
-      transition: color 0.3s ease;
+      position: relative;
+      cursor: pointer;
     }
-
-    .navbar a:hover {
-      color: #ffcc00;
+    
+    .nav-item a {
+      text-decoration: none;
+      color: #fff;
+      transition: all 0.3s ease;
     }
-
-    @keyframes neon {
-      0% {
-        text-shadow: 0 0 5px #ffcc00, 0 0 10px #ffcc00, 0 0 20px #ffcc00, 0 0 40px #ffcc00, 0 0 80px #ffcc00, 0 0 90px #ffcc00, 0 0 100px #ffcc00;
-      }
-      100% {
-        text-shadow: 0 0 2px #ffcc00, 0 0 5px #ffcc00, 0 0 10px #ffcc00, 0 0 20px #ffcc00, 0 0 30px #ffcc00, 0 0 40px #ffcc00, 0 0 50px #ffcc00;
-      }
+    
+    .nav-item::before {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #fff;
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
     }
-
-    .neon-text {
-      color: #ffcc00;
-      animation: neon 1s ease-in-out infinite alternate;
+    
+    .nav-item:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .content {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .essay-type {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    
+    .essay-description {
+      margin-bottom: 10px;
+    }
+    
+    .essay-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    
+    .essay-summary {
+      font-style: italic;
+      margin-bottom: 10px;
+    }
+    
+    .essay-body {
+      line-height: 1.5;
+    }
+    
+    .essay-analysis {
+      margin-top: 20px;
+      display: none;
+    }
+    
+    .essay-analysis-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    
+    .essay-analysis-body {
+      line-height: 1.5;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    .animated {
+      animation: fadeIn 0.5s ease;
+    }
+    
+    .intro {
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    
+    .intro h1 {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    
+    .intro p {
+      font-size: 18px;
+      line-height: 1.5;
+    }
+    
+    .positive-points {
+      margin-bottom: 30px;
+    }
+    
+    .positive-points h2 {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    
+    .positive-points ul {
+      margin: 0;
+      padding: 0;
+    }
+    
+    .positive-points li {
+      margin-bottom: 5px;
     }
   </style>
 </head>
 <body>
   <div class="navbar">
-    <a href="index.html">Back to Main Website</a>
+    <div class="logo">
+      <a href="#">English understandings by Priyansh</a>
+    </div>
+    <ul class="nav-items">
+      <li class="nav-item">
+        <a href="blog.html">Back to Blog</a>
+      </li>
+      <li class="nav-item">
+        <a href="#essay1">Essay 1</a>
+      </li>
+      <li class="nav-item">
+        <a href="#essay2">Essay 2</a>
+      </li>
+      <li class="nav-item">
+        <a href="#essay3">Essay 3</a>
+      </li>
+      <li class="nav-item">
+        <a href="#essay4">Essay 4</a>
+      </li>
+      <li class="nav-item">
+        <a href="#essay5">Essay 5</a>
+      </li>
+    </ul>
   </div>
-  <div class="container">
-    <h1 class="neon-text">English Understandings</h1>
-    <p>We're working hard to bring you engaging essays, essay analysis, and more!</p>
+  
+  <div class="content">
+    <div class="intro animated">
+      <h1>Welcome to English Essays!</h1>
+      <p>Explore a world of knowledge, ideas, and creativity through our collection of captivating English essays. Immerse yourself in the power of words and embark on a journey of inspiration and enlightenment.</p>
+    </div>
+    
+    <div class="positive-points animated">
+      <h2>Why Choose English Essays?</h2>
+      <ul>
+        <li>Discover diverse essay types, from argumentative to descriptive, allowing you to explore various styles of writing.</li>
+        <li>Enhance your critical thinking and communication skills through engaging and thought-provoking essays.</li>
+        <li>Immerse yourself in captivating narratives and gain new perspectives on a wide range of topics.</li>
+        <li>Experience the joy of reading and explore the power of words to shape our thoughts and emotions.</li>
+        <li>Expand your knowledge and broaden your horizons through our carefully curated collection of essays.</li>
+      </ul>
+    </div>
+
+    <section id="essay1" class="animated">
+      <h2 class="essay-title">Essay 1: The Importance of Reading</h2>
+      <p class="essay-summary">
+        Reading is a gateway to knowledge, imagination, and personal growth. It expands horizons and enhances empathy, making us better human beings.
+      </p>
+      <p class="essay-body">
+        Reading opens a world of possibilities. Through books, we gain insights into different cultures, ideas, and perspectives. It broadens our horizons and nurtures our imagination. Reading not only imparts knowledge but also fosters empathy and understanding. It allows us to walk in someone else's shoes, experiencing different lives and emotions. Moreover, reading improves our language skills and critical thinking abilities. It helps us express ourselves better and analyze complex ideas. In a rapidly changing world, where information is easily accessible, reading equips us with the tools to navigate through a sea of knowledge. It is an essential habit for personal growth, lifelong learning, and intellectual development. So, let's embrace the joy of reading and unlock the door to endless possibilities.
+      </p>
+    </section>
+
+    <section id="essay2" class="animated">
+      <h2 class="essay-title">Essay 2: The Impact of Social Media on Society</h2>
+      <p class="essay-summary">
+        Social media has revolutionized the way we connect, communicate, and share information. It has both positive and negative effects on society.
+      </p>
+      <p class="essay-body">
+        Social media has transformed the way we interact, communicate, and share our lives with others. It has become an integral part of our daily routines, shaping our relationships, opinions, and behaviors. On one hand, social media has connected people across the globe, breaking down geographical barriers and fostering virtual communities. It has given individuals a platform to express themselves, share their stories, and raise awareness about important issues. On the other hand, it has also raised concerns about privacy, mental health, and the spread of misinformation. Social media has the power to influence public opinion, shape trends, and impact societal norms. As users, it is essential to use social media mindfully, being aware of its benefits and drawbacks. By harnessing its potential for good, we can create a more informed, inclusive, and connected world.
+      </p>
+    </section>
+
+    <section id="essay3" class="animated">
+      <h2 class="essay-title">Essay 3: The Power of Positive Thinking</h2>
+      <p class="essay-summary">
+        Positive thinking is a mindset that empowers individuals to overcome challenges, cultivate resilience, and lead fulfilling lives.
+      </p>
+      <p class="essay-body">
+        Positive thinking is not about denying reality but rather approaching life with an optimistic and proactive mindset. It is a mental attitude that focuses on possibilities, solutions, and personal growth. Positive thinking empowers individuals to overcome obstacles, persevere in the face of adversity, and maintain a sense of hope and optimism. It has been linked to numerous benefits, including improved physical and mental well-being, enhanced relationships, and increased productivity. By cultivating a positive outlook, we can reframe challenges as opportunities, learn from setbacks, and create a more fulfilling and meaningful life. So, let's embrace the power of positive thinking and unlock our true potential.
+      </p>
+    </section>
+
+    <section id="essay4" class="animated">
+      <h2 class="essay-title">Essay 4: The Magic of Music</h2>
+      <p class="essay-summary">
+        Music is a universal language that transcends boundaries, evokes emotions, and unites people from all walks of life.
+      </p>
+      <p class="essay-body">
+        Music is a powerful art form that speaks to the soul. It has the power to evoke a wide range of emotions, from joy and excitement to nostalgia and introspection. Music has the ability to transport us to different times and places, stirring memories and igniting our imagination. It is a powerful tool for creative expression, allowing artists to convey their thoughts, feelings, and experiences. Moreover, music has therapeutic effects, reducing stress and anxiety, and promoting overall well-being. It is a form of self-expression, enabling artists to share their stories and connect with audiences on a profound level. Music also brings people together, transcending cultural and linguistic barriers. It unites individuals, fostering a sense of community and belonging. In a world filled with chaos and noise, music provides solace, inspiration, and a shared language that unites us all.
+      </p>
+    </section>
+
+    <section id="essay5" class="animated">
+      <h2 class="essay-title">Essay 5: The Importance of Exercise for a Healthy Lifestyle</h2>
+      <p class="essay-summary">
+        Regular exercise is vital for maintaining physical fitness, boosting mental well-being, and enhancing overall quality of life.
+      </p>
+      <p class="essay-body">
+        Exercise is not just a physical activity; it is a way of life. Engaging in regular physical exercise offers numerous benefits for both the body and the mind. It helps maintain a healthy weight, strengthens muscles and bones, and improves cardiovascular health. Exercise is also known to reduce the risk of chronic diseases such as diabetes and heart disease. Beyond the physical advantages, exercise has a positive impact on mental well-being. It releases endorphins, the feel-good hormones, which elevate mood and reduce stress and anxiety. Regular exercise improves sleep quality, boosts cognitive function, and enhances overall mental clarity. It provides an opportunity to unwind, recharge, and prioritize self-care. Incorporating exercise into our daily routines is a powerful step towards achieving a balanced and healthy lifestyle.
+      </p>
+    </section>
+
+    <section id="essay-analysis" class="essay-analysis animated">
+      <h2 class="essay-analysis-title">Essay Analysis</h2>
+      <p class="essay-analysis-body">
+        Analysis of the selected essay will be displayed here
+      </p>
+    </section>
   </div>
+
+  <script>
+    const essayLinks = document.querySelectorAll('.nav-item a');
+    essayLinks.forEach(link => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        const essayId = link.getAttribute('href').substring(1);
+        if (essayId === 'essay-analysis') {
+          showEssayAnalysis();
+        } else {
+          showEssay(essayId);
+        }
+      });
+    });
+
+    function showEssay(essayId) {
+      const essays = document.querySelectorAll('.content section');
+      essays.forEach(essay => {
+        essay.style.display = 'none';
+      });
+      const selectedEssay = document.getElementById(essayId);
+      if (selectedEssay) {
+        selectedEssay.style.display = 'block';
+      }
+      hideEssayAnalysis();
+    }
+
+    function showEssayAnalysis() {
+      const essayAnalysis = document.getElementById('essay-analysis');
+      essayAnalysis.style.display = 'block';
+      const essays = document.querySelectorAll('.content section');
+      essays.forEach(essay => {
+        essay.style.display = 'none';
+      });
+
+      essayAnalysis.querySelector('.essay-analysis-body').textContent = 'Analysis of the selected essay will be displayed here';
+    }
+
+    function hideEssayAnalysis() {
+      const essayAnalysis = document.getElementById('essay-analysis');
+      essayAnalysis.style.display = 'none';
+    }
+  </script>
 </body>
 </html>
