@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.1d06d617.css",
+    "main.js": "/static/js/main.d7c79b2c.js",
+    "static/media/valley.jpeg": "/static/media/valley.e7396bfed7eb653279f1.jpeg",
+    "static/media/VisbyRoundCF-Heavy.woff": "/static/media/VisbyRoundCF-Heavy.5b14967687bb1ecf4295.woff",
+    "static/media/VisbyRoundCF-Regular.woff": "/static/media/VisbyRoundCF-Regular.78ce79eac18796023f1b.woff",
+    "static/media/VisbyRoundCF-DemiBold.woff": "/static/media/VisbyRoundCF-DemiBold.ecce87927ba286ccd634.woff",
+    "index.html": "/index.html",
+    "main.1d06d617.css.map": "/static/css/main.1d06d617.css.map",
+    "main.d7c79b2c.js.map": "/static/js/main.d7c79b2c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1d06d617.css",
+    "static/js/main.d7c79b2c.js"
+  ]
+}
