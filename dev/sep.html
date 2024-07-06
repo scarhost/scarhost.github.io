@@ -1,0 +1,3088 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>September 2023 Budget</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #e0e0e0;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #f2f2f2;
+        }
+
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            vertical-align: middle;
+        }
+
+        select {
+            width: 100%;
+            padding: 8px;
+        }
+
+        @media screen and (max-width: 768px) {
+            body {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>September 2023 Budget Tracker</h1>
+    <table>
+        <tr>
+            <th>Day</th>
+            <th>Used on</th>
+            <th>Spent ($)</th>
+            <th>Available Money ($)</th>
+            <th>Approved</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td><input type="text" id="usedOn"><span id="displayUsedOn"></span></td>
+            <td>
+                <select id="spent">
+                    <!-- ... Options ... -->
+                    <option value="1">$1</option>
+                    <option value="2">$2</option>
+                    <option value="3">$3</option>
+                    <option value="4">$4</option>
+                    <option value="5">$5</option>
+                    <option value="6">$6</option>
+                    <option value="7">$7</option>
+                    <option value="8">$8</option>
+                    <option value="9">$9</option>
+                    <option value="10">$10</option>
+                    <option value="11">$11</option>
+                    <option value="12">$12</option>
+                    <option value="13">$13</option>
+                    <option value="14">$14</option>
+                    <option value="15">$15</option>
+                    <option value="16">$16</option>
+                    <option value="17">$17</option>
+                    <option value="18">$18</option>
+                    <option value="19">$19</option>
+                    <option value="20">$20</option>
+                    <option value="21">$21</option>
+                    <option value="22">$22</option>
+                    <option value="23">$23</option>
+                    <option value="24">$24</option>
+                    <option value="25">$25</option>
+                    <option value="26">$26</option>
+                    <option value="27">$27</option>
+                    <option value="28">$28</option>
+                    <option value="29">$29</option>
+                    <option value="30">$30</option>
+                    <option value="31">$31</option>
+                    <option value="32">$32</option>
+                    <option value="33">$33</option>
+                    <option value="34">$34</option>
+                    <option value="35">$35</option>
+                    <option value="36">$36</option>
+                    <option value="37">$37</option>
+                    <option value="38">$38</option>
+                    <option value="39">$39</option>
+                    <option value="40">$40</option>
+                    <option value="41">$41</option>
+                    <option value="42">$42</option>
+                    <option value="43">$43</option>
+                    <option value="44">$44</option>
+                    <option value="45">$45</option>
+                    <option value="46">$46</option>
+                    <option value="47">$47</option>
+                    <option value="48">$48</option>
+                    <option value="49">$49</option>
+                    <option value="50">$50</option>
+                </select>
+                <span id="displaySpent"></span>
+            </td>
+            <td><input type="text" id="availableMoney"><span id="displayAvailableMoney"></span></td>
+            <td><input type="checkbox" id="approved"><span id="displayApproved"></span></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td><input type="text" id="usedOn2"><span id="displayUsedOn2"></span></td>
+            <td>
+                <select id="spent2">
+                    <option value="1">$1</option>
+                    <option value="2">$2</option>
+                    <option value="3">$3</option>
+        <option value="4">$4</option>
+        <option value="5">$5</option>
+        <option value="6">$6</option>
+        <option value="7">$7</option>
+        <option value="8">$8</option>
+        <option value="9">$9</option>
+        <option value="10">$10</option>
+        <option value="11">$11</option>
+        <option value="12">$12</option>
+        <option value="13">$13</option>
+        <option value="14">$14</option>
+        <option value="15">$15</option>
+        <option value="16">$16</option>
+        <option value="17">$17</option>
+        <option value="18">$18</option>
+        <option value="19">$19</option>
+        <option value="20">$20</option>
+        <option value="21">$21</option>
+        <option value="22">$22</option>
+        <option value="23">$23</option>
+        <option value="24">$24</option>
+        <option value="25">$25</option>
+        <option value="26">$26</option>
+        <option value="27">$27</option>
+        <option value="28">$28</option>
+        <option value="29">$29</option>
+        <option value="30">$30</option>
+        <option value="31">$31</option>
+        <option value="32">$32</option>
+        <option value="33">$33</option>
+        <option value="34">$34</option>
+        <option value="35">$35</option>
+        <option value="36">$36</option>
+        <option value="37">$37</option>
+        <option value="38">$38</option>
+        <option value="39">$39</option>
+        <option value="40">$40</option>
+        <option value="41">$41</option>
+        <option value="42">$42</option>
+        <option value="43">$43</option>
+        <option value="44">$44</option>
+        <option value="45">$45</option>
+        <option value="46">$46</option>
+        <option value="47">$47</option>
+        <option value="48">$48</option>
+        <option value="49">$49</option>
+        <option value="50">$50</option>
+                    <!-- ... Additional options for spending ... -->
+                </select>
+                <span id="displaySpent2"></span>
+            </td>
+            <td><input type="text" id="availableMoney2"><span id="displayAvailableMoney2"></span></td>
+            <td><input type="checkbox" id="approved2"><span id="displayApproved2"></span></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td><input type="text" id="usedOn3"><span id="displayUsedOn3"></span></td>
+            <td>
+                <select id="spent3">
+                    <option value="1">$1</option>
+                    <option value="2">$2</option>
+                    <option value="3">$3</option>
+        <option value="4">$4</option>
+        <option value="5">$5</option>
+        <option value="6">$6</option>
+        <option value="7">$7</option>
+        <option value="8">$8</option>
+        <option value="9">$9</option>
+        <option value="10">$10</option>
+        <option value="11">$11</option>
+        <option value="12">$12</option>
+        <option value="13">$13</option>
+        <option value="14">$14</option>
+        <option value="15">$15</option>
+        <option value="16">$16</option>
+        <option value="17">$17</option>
+        <option value="18">$18</option>
+        <option value="19">$19</option>
+        <option value="20">$20</option>
+        <option value="21">$21</option>
+        <option value="22">$22</option>
+        <option value="23">$23</option>
+        <option value="24">$24</option>
+        <option value="25">$25</option>
+        <option value="26">$26</option>
+        <option value="27">$27</option>
+        <option value="28">$28</option>
+        <option value="29">$29</option>
+        <option value="30">$30</option>
+        <option value="31">$31</option>
+        <option value="32">$32</option>
+        <option value="33">$33</option>
+        <option value="34">$34</option>
+        <option value="35">$35</option>
+        <option value="36">$36</option>
+        <option value="37">$37</option>
+        <option value="38">$38</option>
+        <option value="39">$39</option>
+        <option value="40">$40</option>
+        <option value="41">$41</option>
+        <option value="42">$42</option>
+        <option value="43">$43</option>
+        <option value="44">$44</option>
+        <option value="45">$45</option>
+        <option value="46">$46</option>
+        <option value="47">$47</option>
+        <option value="48">$48</option>
+        <option value="49">$49</option>
+        <option value="50">$50</option>
+                    <!-- ... Additional options for spending ... -->
+                </select>
+                <span id="displaySpent3"></span>
+            </td>
+            <td><input type="text" id="availableMoney3"><span id="displayAvailableMoney3"></span></td>
+            <td><input type="checkbox" id="approved3"><span id="displayApproved3"></span></td>
+        <tr>
+            <td>4</td>
+            <td><input type="text" id="usedOn4"><span id="displayUsedOn4"></span></td>
+            <td>
+                <select id="spent4">
+                    <option value="1">$1</option>
+                    <option value="2">$2</option>
+                    <option value="3">$3</option>
+        <option value="4">$4</option>
+        <option value="5">$5</option>
+        <option value="6">$6</option>
+        <option value="7">$7</option>
+        <option value="8">$8</option>
+        <option value="9">$9</option>
+        <option value="10">$10</option>
+        <option value="11">$11</option>
+        <option value="12">$12</option>
+        <option value="13">$13</option>
+        <option value="14">$14</option>
+        <option value="15">$15</option>
+        <option value="16">$16</option>
+        <option value="17">$17</option>
+        <option value="18">$18</option>
+        <option value="19">$19</option>
+        <option value="20">$20</option>
+        <option value="21">$21</option>
+        <option value="22">$22</option>
+        <option value="23">$23</option>
+        <option value="24">$24</option>
+        <option value="25">$25</option>
+        <option value="26">$26</option>
+        <option value="27">$27</option>
+        <option value="28">$28</option>
+        <option value="29">$29</option>
+        <option value="30">$30</option>
+        <option value="31">$31</option>
+        <option value="32">$32</option>
+        <option value="33">$33</option>
+        <option value="34">$34</option>
+        <option value="35">$35</option>
+        <option value="36">$36</option>
+        <option value="37">$37</option>
+        <option value="38">$38</option>
+        <option value="39">$39</option>
+        <option value="40">$40</option>
+        <option value="41">$41</option>
+        <option value="42">$42</option>
+        <option value="43">$43</option>
+        <option value="44">$44</option>
+        <option value="45">$45</option>
+        <option value="46">$46</option>
+        <option value="47">$47</option>
+        <option value="48">$48</option>
+        <option value="49">$49</option>
+        <option value="50">$50</option>
+                    <!-- ... Additional options for spending ... -->
+                </select>
+                <span id="displaySpent4"></span>
+            </td>
+            <td><input type="text" id="availableMoney4"><span id="displayAvailableMoney4"></span></td>
+            <td><input type="checkbox" id="approved4"><span id="displayApproved4"></span></td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td><input type="text" id="usedOn"><span id="displayUsedOn"></span></td>
+            <td>
+                <select>
+                    <option value="1">$1</option>
+                    <option value="2">$2</option>
+                    <option value="3">$3</option>
+        <option value="4">$4</option>
+        <option value="5">$5</option>
+        <option value="6">$6</option>
+        <option value="7">$7</option>
+        <option value="8">$8</option>
+        <option value="9">$9</option>
+        <option value="10">$10</option>
+        <option value="11">$11</option>
+        <option value="12">$12</option>
+        <option value="13">$13</option>
+        <option value="14">$14</option>
+        <option value="15">$15</option>
+        <option value="16">$16</option>
+        <option value="17">$17</option>
+        <option value="18">$18</option>
+        <option value="19">$19</option>
+        <option value="20">$20</option>
+        <option value="21">$21</option>
+        <option value="22">$22</option>
+        <option value="23">$23</option>
+        <option value="24">$24</option>
+        <option value="25">$25</option>
+        <option value="26">$26</option>
+        <option value="27">$27</option>
+        <option value="28">$28</option>
+        <option value="29">$29</option>
+        <option value="30">$30</option>
+        <option value="31">$31</option>
+        <option value="32">$32</option>
+        <option value="33">$33</option>
+        <option value="34">$34</option>
+        <option value="35">$35</option>
+        <option value="36">$36</option>
+        <option value="37">$37</option>
+        <option value="38">$38</option>
+        <option value="39">$39</option>
+        <option value="40">$40</option>
+        <option value="41">$41</option>
+        <option value="42">$42</option>
+        <option value="43">$43</option>
+        <option value="44">$44</option>
+        <option value="45">$45</option>
+        <option value="46">$46</option>
+        <option value="47">$47</option>
+        <option value="48">$48</option>
+        <option value="49">$49</option>
+        <option value="50">$50</option>
+                    <!-- ... Additional options for spending ... -->
+                </select>
+                <span id="displaySpent3"></span>
+            </td>
+            <td><input type="text" id="availableMoney3"><span id="displayAvailableMoney3"></span></td>
+            <td><input type="checkbox" id="approved3"><span id="displayApproved3"></span></td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td><input type="text" id="usedOn"><span id="displayUsedOn"></span></td>
+            <td>
+                <select>
+                    <option value="1">$1</option>
+                    <option value="2">$2</option>
+                    <option value="3">$3</option>
+        <option value="4">$4</option>
+        <option value="5">$5</option>
+        <option value="6">$6</option>
+        <option value="7">$7</option>
+        <option value="8">$8</option>
+        <option value="9">$9</option>
+        <option value="10">$10</option>
+        <option value="11">$11</option>
+        <option value="12">$12</option>
+        <option value="13">$13</option>
+        <option value="14">$14</option>
+        <option value="15">$15</option>
+        <option value="16">$16</option>
+        <option value="17">$17</option>
+        <option value="18">$18</option>
+        <option value="19">$19</option>
+        <option value="20">$20</option>
+        <option value="21">$21</option>
+        <option value="22">$22</option>
+        <option value="23">$23</option>
+        <option value="24">$24</option>
+        <option value="25">$25</option>
+        <option value="26">$26</option>
+        <option value="27">$27</option>
+        <option value="28">$28</option>
+        <option value="29">$29</option>
+        <option value="30">$30</option>
+        <option value="31">$31</option>
+        <option value="32">$32</option>
+        <option value="33">$33</option>
+        <option value="34">$34</option>
+        <option value="35">$35</option>
+        <option value="36">$36</option>
+        <option value="37">$37</option>
+        <option value="38">$38</option>
+        <option value="39">$39</option>
+        <option value="40">$40</option>
+        <option value="41">$41</option>
+        <option value="42">$42</option>
+        <option value="43">$43</option>
+        <option value="44">$44</option>
+        <option value="45">$45</option>
+        <option value="46">$46</option>
+        <option value="47">$47</option>
+        <option value="48">$48</option>
+        <option value="49">$49</option>
+        <option value="50">$50</option>
+                    <!-- ... Additional options for spending ... -->
+                </select>
+                <span id="displaySpent3"></span>
+            </td>
+            <td><input type="text" id="availableMoney3"><span id="displayAvailableMoney3"></span></td>
+            <td><input type="checkbox" id="approved3"><span id="displayApproved3"></span></td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td><input type="text" id="usedOn"><span id="displayUsedOn"></span></td>
+            <td>
+                <select>
+                    <option value="1">$1</option>
+                    <option value="2">$2</option>
+                    <option value="3">$3</option>
+        <option value="4">$4</option>
+        <option value="5">$5</option>
+        <option value="6">$6</option>
+        <option value="7">$7</option>
+        <option value="8">$8</option>
+        <option value="9">$9</option>
+        <option value="10">$10</option>
+        <option value="11">$11</option>
+        <option value="12">$12</option>
+        <option value="13">$13</option>
+        <option value="14">$14</option>
+        <option value="15">$15</option>
+        <option value="16">$16</option>
+        <option value="17">$17</option>
+        <option value="18">$18</option>
+        <option value="19">$19</option>
+        <option value="20">$20</option>
+        <option value="21">$21</option>
+        <option value="22">$22</option>
+        <option value="23">$23</option>
+        <option value="24">$24</option>
+        <option value="25">$25</option>
+        <option value="26">$26</option>
+        <option value="27">$27</option>
+        <option value="28">$28</option>
+        <option value="29">$29</option>
+        <option value="30">$30</option>
+        <option value="31">$31</option>
+        <option value="32">$32</option>
+        <option value="33">$33</option>
+        <option value="34">$34</option>
+        <option value="35">$35</option>
+        <option value="36">$36</option>
+        <option value="37">$37</option>
+        <option value="38">$38</option>
+        <option value="39">$39</option>
+        <option value="40">$40</option>
+        <option value="41">$41</option>
+        <option value="42">$42</option>
+        <option value="43">$43</option>
+        <option value="44">$44</option>
+        <option value="45">$45</option>
+        <option value="46">$46</option>
+        <option value="47">$47</option>
+        <option value="48">$48</option>
+        <option value="49">$49</option>
+        <option value="50">$50</option>
+                    <!-- ... Additional options for spending ... -->
+                </select>
+                <span id="displaySpent3"></span>
+            </td>
+            <td><input type="text" id="availableMoney3"><span id="displayAvailableMoney3"></span></td>
+            <td><input type="checkbox" id="approved3"><span id="displayApproved3"></span></td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td><input type="text" id="usedOn"><span id="displayUsedOn"></span></td>
+            <td>
+                <select>
+                    <option value="1">$1</option>
+                    <option value="2">$2</option>
+                    <option value="3">$3</option>
+        <option value="4">$4</option>
+        <option value="5">$5</option>
+        <option value="6">$6</option>
+        <option value="7">$7</option>
+        <option value="8">$8</option>
+        <option value="9">$9</option>
+        <option value="10">$10</option>
+        <option value="11">$11</option>
+        <option value="12">$12</option>
+        <option value="13">$13</option>
+        <option value="14">$14</option>
+        <option value="15">$15</option>
+        <option value="16">$16</option>
+        <option value="17">$17</option>
+        <option value="18">$18</option>
+        <option value="19">$19</option>
+        <option value="20">$20</option>
+        <option value="21">$21</option>
+        <option value="22">$22</option>
+        <option value="23">$23</option>
+        <option value="24">$24</option>
+        <option value="25">$25</option>
+        <option value="26">$26</option>
+        <option value="27">$27</option>
+        <option value="28">$28</option>
+        <option value="29">$29</option>
+        <option value="30">$30</option>
+        <option value="31">$31</option>
+        <option value="32">$32</option>
+        <option value="33">$33</option>
+        <option value="34">$34</option>
+        <option value="35">$35</option>
+        <option value="36">$36</option>
+        <option value="37">$37</option>
+        <option value="38">$38</option>
+        <option value="39">$39</option>
+        <option value="40">$40</option>
+        <option value="41">$41</option>
+        <option value="42">$42</option>
+        <option value="43">$43</option>
+        <option value="44">$44</option>
+        <option value="45">$45</option>
+        <option value="46">$46</option>
+        <option value="47">$47</option>
+        <option value="48">$48</option>
+        <option value="49">$49</option>
+        <option value="50">$50</option>
+                    <!-- ... Additional options for spending ... -->
+                </select>
+                <span id="displaySpent3"></span>
+            </td>
+            <td><input type="text" id="availableMoney3"><span id="displayAvailableMoney3"></span></td>
+            <td><input type="checkbox" id="approved3"><span id="displayApproved3"></span></td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td><input type="text" id="usedOn"><span id="displayUsedOn"></span></td>
+            <td>
+                <select>
+                    <option value="1">$1</option>
+                    <option value="2">$2</option>
+                    <option value="3">$3</option>
+        <option value="4">$4</option>
+        <option value="5">$5</option>
+        <option value="6">$6</option>
+        <option value="7">$7</option>
+        <option value="8">$8</option>
+        <option value="9">$9</option>
+        <option value="10">$10</option>
+        <option value="11">$11</option>
+        <option value="12">$12</option>
+        <option value="13">$13</option>
+        <option value="14">$14</option>
+        <option value="15">$15</option>
+        <option value="16">$16</option>
+        <option value="17">$17</option>
+        <option value="18">$18</option>
+        <option value="19">$19</option>
+        <option value="20">$20</option>
+        <option value="21">$21</option>
+        <option value="22">$22</option>
+        <option value="23">$23</option>
+        <option value="24">$24</option>
+        <option value="25">$25</option>
+        <option value="26">$26</option>
+        <option value="27">$27</option>
+        <option value="28">$28</option>
+        <option value="29">$29</option>
+        <option value="30">$30</option>
+        <option value="31">$31</option>
+        <option value="32">$32</option>
+        <option value="33">$33</option>
+        <option value="34">$34</option>
+        <option value="35">$35</option>
+        <option value="36">$36</option>
+        <option value="37">$37</option>
+        <option value="38">$38</option>
+        <option value="39">$39</option>
+        <option value="40">$40</option>
+        <option value="41">$41</option>
+        <option value="42">$42</option>
+        <option value="43">$43</option>
+        <option value="44">$44</option>
+        <option value="45">$45</option>
+        <option value="46">$46</option>
+        <option value="47">$47</option>
+        <option value="48">$48</option>
+        <option value="49">$49</option>
+        <option value="50">$50</option>
+                    <!-- ... Additional options for spending ... -->
+                </select>
+                <span id="displaySpent3"></span>
+            </td>
+            <td><input type="text" id="availableMoney3"><span id="displayAvailableMoney3"></span></td>
+            <td><input type="checkbox" id="approved3"><span id="displayApproved3"></span></td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td><input type="text" id="usedOn"><span id="displayUsedOn"></span></td>
+            <td>
+                <select>
+                    <option value="1">$1</option>
+                    <option value="2">$2</option>
+                    <option value="3">$3</option>
+        <option value="4">$4</option>
+        <option value="5">$5</option>
+        <option value="6">$6</option>
+        <option value="7">$7</option>
+        <option value="8">$8</option>
+        <option value="9">$9</option>
+        <option value="10">$10</option>
+        <option value="11">$11</option>
+        <option value="12">$12</option>
+        <option value="13">$13</option>
+        <option value="14">$14</option>
+        <option value="15">$15</option>
+        <option value="16">$16</option>
+        <option value="17">$17</option>
+        <option value="18">$18</option>
+        <option value="19">$19</option>
+        <option value="20">$20</option>
+        <option value="21">$21</option>
+        <option value="22">$22</option>
+        <option value="23">$23</option>
+        <option value="24">$24</option>
+        <option value="25">$25</option>
+        <option value="26">$26</option>
+        <option value="27">$27</option>
+        <option value="28">$28</option>
+        <option value="29">$29</option>
+        <option value="30">$30</option>
+        <option value="31">$31</option>
+        <option value="32">$32</option>
+        <option value="33">$33</option>
+        <option value="34">$34</option>
+        <option value="35">$35</option>
+        <option value="36">$36</option>
+        <option value="37">$37</option>
+        <option value="38">$38</option>
+        <option value="39">$39</option>
+        <option value="40">$40</option>
+        <option value="41">$41</option>
+        <option value="42">$42</option>
+        <option value="43">$43</option>
+        <option value="44">$44</option>
+        <option value="45">$45</option>
+        <option value="46">$46</option>
+        <option value="47">$47</option>
+        <option value="48">$48</option>
+        <option value="49">$49</option>
+        <option value="50">$50</option>
+                    <!-- ... Additional options for spending ... -->
+                </select>
+                <span id="displaySpent3"></span>
+            </td>
+            <td><input type="text" id="availableMoney3"><span id="displayAvailableMoney3"></span></td>
+            <td><input type="checkbox" id="approved3"><span id="displayApproved3"></span></td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td><input type="text" id="usedOn11"><span id="displayUsedOn11"></span></td>
+            <td>
+                <select id="spent11">
+                    <option value="1">$1</option>
+                    <option value="2">$2</option>
+                    <option value="3">$3</option>
+        <option value="4">$4</option>
+        <option value="5">$5</option>
+        <option value="6">$6</option>
+        <option value="7">$7</option>
+        <option value="8">$8</option>
+        <option value="9">$9</option>
+        <option value="10">$10</option>
+        <option value="11">$11</option>
+        <option value="12">$12</option>
+        <option value="13">$13</option>
+        <option value="14">$14</option>
+        <option value="15">$15</option>
+        <option value="16">$16</option>
+        <option value="17">$17</option>
+        <option value="18">$18</option>
+        <option value="19">$19</option>
+        <option value="20">$20</option>
+        <option value="21">$21</option>
+        <option value="22">$22</option>
+        <option value="23">$23</option>
+        <option value="24">$24</option>
+        <option value="25">$25</option>
+        <option value="26">$26</option>
+        <option value="27">$27</option>
+        <option value="28">$28</option>
+        <option value="29">$29</option>
+        <option value="30">$30</option>
+        <option value="31">$31</option>
+        <option value="32">$32</option>
+        <option value="33">$33</option>
+        <option value="34">$34</option>
+        <option value="35">$35</option>
+        <option value="36">$36</option>
+        <option value="37">$37</option>
+        <option value="38">$38</option>
+        <option value="39">$39</option>
+        <option value="40">$40</option>
+        <option value="41">$41</option>
+        <option value="42">$42</option>
+        <option value="43">$43</option>
+        <option value="44">$44</option>
+        <option value="45">$45</option>
+        <option value="46">$46</option>
+        <option value="47">$47</option>
+        <option value="48">$48</option>
+        <option value="49">$49</option>
+        <option value="50">$50</option>
+                    <!-- ... Additional options for spending ... -->
+                </select>
+                <span id="displaySpent11"></span>
+            </td>
+            <td><input type="text" id="availableMoney11"><span id="displayAvailableMoney11"></span></td>
+            <td><input type="checkbox" id="approved11"><span id="displayApproved11"></span></td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td><input type="text" id="usedOn"><span id="displayUsedOn"></span></td>
+            <td>
+                <select>
+                    <option value="1">$1</option>
+                    <option value="2">$2</option>
+                    <option value="3">$3</option>
+        <option value="4">$4</option>
+        <option value="5">$5</option>
+        <option value="6">$6</option>
+        <option value="7">$7</option>
+        <option value="8">$8</option>
+        <option value="9">$9</option>
+        <option value="10">$10</option>
+        <option value="11">$11</option>
+        <option value="12">$12</option>
+        <option value="13">$13</option>
+        <option value="14">$14</option>
+        <option value="15">$15</option>
+        <option value="16">$16</option>
+        <option value="17">$17</option>
+        <option value="18">$18</option>
+        <option value="19">$19</option>
+        <option value="20">$20</option>
+        <option value="21">$21</option>
+        <option value="22">$22</option>
+        <option value="23">$23</option>
+        <option value="24">$24</option>
+        <option value="25">$25</option>
+        <option value="26">$26</option>
+        <option value="27">$27</option>
+        <option value="28">$28</option>
+        <option value="29">$29</option>
+        <option value="30">$30</option>
+        <option value="31">$31</option>
+        <option value="32">$32</option>
+        <option value="33">$33</option>
+        <option value="34">$34</option>
+        <option value="35">$35</option>
+        <option value="36">$36</option>
+        <option value="37">$37</option>
+        <option value="38">$38</option>
+        <option value="39">$39</option>
+        <option value="40">$40</option>
+        <option value="41">$41</option>
+        <option value="42">$42</option>
+        <option value="43">$43</option>
+        <option value="44">$44</option>
+        <option value="45">$45</option>
+        <option value="46">$46</option>
+        <option value="47">$47</option>
+        <option value="48">$48</option>
+        <option value="49">$49</option>
+        <option value="50">$50</option>
+                    <!-- ... Additional options for spending ... -->
+                </select>
+                <span id="displaySpent3"></span>
+            </td>
+            <td><input type="text" id="availableMoney3"><span id="displayAvailableMoney3"></span></td>
+            <td><input type="checkbox" id="approved3"><span id="displayApproved3"></span></td>
+        </tr>
+        <tr>
+            <td>13</td>
+            <td><input type="text" id="usedOn"><span id="displayUsedOn"></span></td>
+            <td>
+                <select>
+                    <option value="1">$1</option>
+                    <option value="2">$2</option>
+                    <option value="3">$3</option>
+        <option value="4">$4</option>
+        <option value="5">$5</option>
+        <option value="6">$6</option>
+        <option value="7">$7</option>
+        <option value="8">$8</option>
+        <option value="9">$9</option>
+        <option value="10">$10</option>
+        <option value="11">$11</option>
+        <option value="12">$12</option>
+        <option value="13">$13</option>
+        <option value="14">$14</option>
+        <option value="15">$15</option>
+        <option value="16">$16</option>
+        <option value="17">$17</option>
+        <option value="18">$18</option>
+        <option value="19">$19</option>
+        <option value="20">$20</option>
+        <option value="21">$21</option>
+        <option value="22">$22</option>
+        <option value="23">$23</option>
+        <option value="24">$24</option>
+        <option value="25">$25</option>
+        <option value="26">$26</option>
+        <option value="27">$27</option>
+        <option value="28">$28</option>
+        <option value="29">$29</option>
+        <option value="30">$30</option>
+        <option value="31">$31</option>
+        <option value="32">$32</option>
+        <option value="33">$33</option>
+        <option value="34">$34</option>
+        <option value="35">$35</option>
+        <option value="36">$36</option>
+        <option value="37">$37</option>
+        <option value="38">$38</option>
+        <option value="39">$39</option>
+        <option value="40">$40</option>
+        <option value="41">$41</option>
+        <option value="42">$42</option>
+        <option value="43">$43</option>
+        <option value="44">$44</option>
+        <option value="45">$45</option>
+        <option value="46">$46</option>
+        <option value="47">$47</option>
+        <option value="48">$48</option>
+        <option value="49">$49</option>
+        <option value="50">$50</option>
+                    <!-- ... Additional options for spending ... -->
+                </select>
+                <span id="displaySpent3"></span>
+            </td>
+            <td><input type="text" id="availableMoney3"><span id="displayAvailableMoney3"></span></td>
+            <td><input type="checkbox" id="approved3"><span id="displayApproved3"></span></td>
+        </tr>
+        <tr>
+            <td>14</td>
+            <td><input type="text" id="usedOn"><span id="displayUsedOn"></span></td>
+            <td>
+                <select>
+                    <option value="1">$1</option>
+                    <option value="2">$2</option>
+                    <option value="3">$3</option>
+        <option value="4">$4</option>
+        <option value="5">$5</option>
+        <option value="6">$6</option>
+        <option value="7">$7</option>
+        <option value="8">$8</option>
+        <option value="9">$9</option>
+        <option value="10">$10</option>
+        <option value="11">$11</option>
+        <option value="12">$12</option>
+        <option value="13">$13</option>
+        <option value="14">$14</option>
+        <option value="15">$15</option>
+        <option value="16">$16</option>
+        <option value="17">$17</option>
+        <option value="18">$18</option>
+        <option value="19">$19</option>
+        <option value="20">$20</option>
+        <option value="21">$21</option>
+        <option value="22">$22</option>
+        <option value="23">$23</option>
+        <option value="24">$24</option>
+        <option value="25">$25</option>
+        <option value="26">$26</option>
+        <option value="27">$27</option>
+        <option value="28">$28</option>
+        <option value="29">$29</option>
+        <option value="30">$30</option>
+        <option value="31">$31</option>
+        <option value="32">$32</option>
+        <option value="33">$33</option>
+        <option value="34">$34</option>
+        <option value="35">$35</option>
+        <option value="36">$36</option>
+        <option value="37">$37</option>
+        <option value="38">$38</option>
+        <option value="39">$39</option>
+        <option value="40">$40</option>
+        <option value="41">$41</option>
+        <option value="42">$42</option>
+        <option value="43">$43</option>
+        <option value="44">$44</option>
+        <option value="45">$45</option>
+        <option value="46">$46</option>
+        <option value="47">$47</option>
+        <option value="48">$48</option>
+        <option value="49">$49</option>
+        <option value="50">$50</option>
+                    <!-- ... Additional options for spending ... -->
+                </select>
+                <span id="displaySpent3"></span>
+            </td>
+            <td><input type="text" id="availableMoney3"><span id="displayAvailableMoney3"></span></td>
+            <td><input type="checkbox" id="approved3"><span id="displayApproved3"></span></td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td><input type="text" id="usedOn"><span id="displayUsedOn"></span></td>
+            <td>
+                <select>
+                    <option value="1">$1</option>
+                    <option value="2">$2</option>
+                    <option value="3">$3</option>
+        <option value="4">$4</option>
+        <option value="5">$5</option>
+        <option value="6">$6</option>
+        <option value="7">$7</option>
+        <option value="8">$8</option>
+        <option value="9">$9</option>
+        <option value="10">$10</option>
+        <option value="11">$11</option>
+        <option value="12">$12</option>
+        <option value="13">$13</option>
+        <option value="14">$14</option>
+        <option value="15">$15</option>
+        <option value="16">$16</option>
+        <option value="17">$17</option>
+        <option value="18">$18</option>
+        <option value="19">$19</option>
+        <option value="20">$20</option>
+        <option value="21">$21</option>
+        <option value="22">$22</option>
+        <option value="23">$23</option>
+        <option value="24">$24</option>
+        <option value="25">$25</option>
+        <option value="26">$26</option>
+        <option value="27">$27</option>
+        <option value="28">$28</option>
+        <option value="29">$29</option>
+        <option value="30">$30</option>
+        <option value="31">$31</option>
+        <option value="32">$32</option>
+        <option value="33">$33</option>
+        <option value="34">$34</option>
+        <option value="35">$35</option>
+        <option value="36">$36</option>
+        <option value="37">$37</option>
+        <option value="38">$38</option>
+        <option value="39">$39</option>
+        <option value="40">$40</option>
+        <option value="41">$41</option>
+        <option value="42">$42</option>
+        <option value="43">$43</option>
+        <option value="44">$44</option>
+        <option value="45">$45</option>
+        <option value="46">$46</option>
+        <option value="47">$47</option>
+        <option value="48">$48</option>
+        <option value="49">$49</option>
+        <option value="50">$50</option>
+                    <!-- ... Additional options for spending ... -->
+                </select>
+                <span id="displaySpent3"></span>
+            </td>
+            <td><input type="text" id="availableMoney3"><span id="displayAvailableMoney3"></span></td>
+            <td><input type="checkbox" id="approved3"><span id="displayApproved3"></span></td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td><input type="text" id="usedOn"><span id="displayUsedOn"></span></td>
+            <td>
+                <select>
+                    <option value="1">$1</option>
+                    <option value="2">$2</option>
+                    <option value="3">$3</option>
+        <option value="4">$4</option>
+        <option value="5">$5</option>
+        <option value="6">$6</option>
+        <option value="7">$7</option>
+        <option value="8">$8</option>
+        <option value="9">$9</option>
+        <option value="10">$10</option>
+        <option value="11">$11</option>
+        <option value="12">$12</option>
+        <option value="13">$13</option>
+        <option value="14">$14</option>
+        <option value="15">$15</option>
+        <option value="16">$16</option>
+        <option value="17">$17</option>
+        <option value="18">$18</option>
+        <option value="19">$19</option>
+        <option value="20">$20</option>
+        <option value="21">$21</option>
+        <option value="22">$22</option>
+        <option value="23">$23</option>
+        <option value="24">$24</option>
+        <option value="25">$25</option>
+        <option value="26">$26</option>
+        <option value="27">$27</option>
+        <option value="28">$28</option>
+        <option value="29">$29</option>
+        <option value="30">$30</option>
+        <option value="31">$31</option>
+        <option value="32">$32</option>
+        <option value="33">$33</option>
+        <option value="34">$34</option>
+        <option value="35">$35</option>
+        <option value="36">$36</option>
+        <option value="37">$37</option>
+        <option value="38">$38</option>
+        <option value="39">$39</option>
+        <option value="40">$40</option>
+        <option value="41">$41</option>
+        <option value="42">$42</option>
+        <option value="43">$43</option>
+        <option value="44">$44</option>
+        <option value="45">$45</option>
+        <option value="46">$46</option>
+        <option value="47">$47</option>
+        <option value="48">$48</option>
+        <option value="49">$49</option>
+        <option value="50">$50</option>
+                    <!-- ... Additional options for spending ... -->
+                </select>
+                <span id="displaySpent3"></span>
+            </td>
+            <td><input type="text" id="availableMoney3"><span id="displayAvailableMoney3"></span></td>
+            <td><input type="checkbox" id="approved3"><span id="displayApproved3"></span></td>
+        </tr>
+        <tr>
+            <td>17</td>
+            <td><input type="text" id="usedOn"><span id="displayUsedOn"></span></td>
+            <td>
+                <select>
+                    <option value="1">$1</option>
+                    <option value="2">$2</option>
+                    <option value="3">$3</option>
+        <option value="4">$4</option>
+        <option value="5">$5</option>
+        <option value="6">$6</option>
+        <option value="7">$7</option>
+        <option value="8">$8</option>
+        <option value="9">$9</option>
+        <option value="10">$10</option>
+        <option value="11">$11</option>
+        <option value="12">$12</option>
+        <option value="13">$13</option>
+        <option value="14">$14</option>
+        <option value="15">$15</option>
+        <option value="16">$16</option>
+        <option value="17">$17</option>
+        <option value="18">$18</option>
+        <option value="19">$19</option>
+        <option value="20">$20</option>
+        <option value="21">$21</option>
+        <option value="22">$22</option>
+        <option value="23">$23</option>
+        <option value="24">$24</option>
+        <option value="25">$25</option>
+        <option value="26">$26</option>
+        <option value="27">$27</option>
+        <option value="28">$28</option>
+        <option value="29">$29</option>
+        <option value="30">$30</option>
+        <option value="31">$31</option>
+        <option value="32">$32</option>
+        <option value="33">$33</option>
+        <option value="34">$34</option>
+        <option value="35">$35</option>
+        <option value="36">$36</option>
+        <option value="37">$37</option>
+        <option value="38">$38</option>
+        <option value="39">$39</option>
+        <option value="40">$40</option>
+        <option value="41">$41</option>
+        <option value="42">$42</option>
+        <option value="43">$43</option>
+        <option value="44">$44</option>
+        <option value="45">$45</option>
+        <option value="46">$46</option>
+        <option value="47">$47</option>
+        <option value="48">$48</option>
+        <option value="49">$49</option>
+        <option value="50">$50</option>
+                    <!-- ... Additional options for spending ... -->
+                </select>
+                <span id="displaySpent3"></span>
+            </td>
+            <td><input type="text" id="availableMoney3"><span id="displayAvailableMoney3"></span></td>
+            <td><input type="checkbox" id="approved3"><span id="displayApproved3"></span></td>
+        </tr>
+        <tr>
+            <td>18</td>
+            <td><input type="text" id="usedOn"><span id="displayUsedOn"></span></td>
+            <td>
+                <select>
+                    <option value="1">$1</option>
+                    <option value="2">$2</option>
+                    <option value="3">$3</option>
+        <option value="4">$4</option>
+        <option value="5">$5</option>
+        <option value="6">$6</option>
+        <option value="7">$7</option>
+        <option value="8">$8</option>
+        <option value="9">$9</option>
+        <option value="10">$10</option>
+        <option value="11">$11</option>
+        <option value="12">$12</option>
+        <option value="13">$13</option>
+        <option value="14">$14</option>
+        <option value="15">$15</option>
+        <option value="16">$16</option>
+        <option value="17">$17</option>
+        <option value="18">$18</option>
+        <option value="19">$19</option>
+        <option value="20">$20</option>
+        <option value="21">$21</option>
+        <option value="22">$22</option>
+        <option value="23">$23</option>
+        <option value="24">$24</option>
+        <option value="25">$25</option>
+        <option value="26">$26</option>
+        <option value="27">$27</option>
+        <option value="28">$28</option>
+        <option value="29">$29</option>
+        <option value="30">$30</option>
+        <option value="31">$31</option>
+        <option value="32">$32</option>
+        <option value="33">$33</option>
+        <option value="34">$34</option>
+        <option value="35">$35</option>
+        <option value="36">$36</option>
+        <option value="37">$37</option>
+        <option value="38">$38</option>
+        <option value="39">$39</option>
+        <option value="40">$40</option>
+        <option value="41">$41</option>
+        <option value="42">$42</option>
+        <option value="43">$43</option>
+        <option value="44">$44</option>
+        <option value="45">$45</option>
+        <option value="46">$46</option>
+        <option value="47">$47</option>
+        <option value="48">$48</option>
+        <option value="49">$49</option>
+        <option value="50">$50</option>
+                    <!-- ... Additional options for spending ... -->
+                </select>
+                <span id="displaySpent3"></span>
+            </td>
+            <td><input type="text" id="availableMoney3"><span id="displayAvailableMoney3"></span></td>
+            <td><input type="checkbox" id="approved3"><span id="displayApproved3"></span></td>
+        </tr>
+        <tr>
+            <td>19</td>
+            <td><input type="text" id="usedOn"><span id="displayUsedOn"></span></td>
+            <td>
+                <select>
+                    <option value="1">$1</option>
+                    <option value="2">$2</option>
+                    <option value="3">$3</option>
+        <option value="4">$4</option>
+        <option value="5">$5</option>
+        <option value="6">$6</option>
+        <option value="7">$7</option>
+        <option value="8">$8</option>
+        <option value="9">$9</option>
+        <option value="10">$10</option>
+        <option value="11">$11</option>
+        <option value="12">$12</option>
+        <option value="13">$13</option>
+        <option value="14">$14</option>
+        <option value="15">$15</option>
+        <option value="16">$16</option>
+        <option value="17">$17</option>
+        <option value="18">$18</option>
+        <option value="19">$19</option>
+        <option value="20">$20</option>
+        <option value="21">$21</option>
+        <option value="22">$22</option>
+        <option value="23">$23</option>
+        <option value="24">$24</option>
+        <option value="25">$25</option>
+        <option value="26">$26</option>
+        <option value="27">$27</option>
+        <option value="28">$28</option>
+        <option value="29">$29</option>
+        <option value="30">$30</option>
+        <option value="31">$31</option>
+        <option value="32">$32</option>
+        <option value="33">$33</option>
+        <option value="34">$34</option>
+        <option value="35">$35</option>
+        <option value="36">$36</option>
+        <option value="37">$37</option>
+        <option value="38">$38</option>
+        <option value="39">$39</option>
+        <option value="40">$40</option>
+        <option value="41">$41</option>
+        <option value="42">$42</option>
+        <option value="43">$43</option>
+        <option value="44">$44</option>
+        <option value="45">$45</option>
+        <option value="46">$46</option>
+        <option value="47">$47</option>
+        <option value="48">$48</option>
+        <option value="49">$49</option>
+        <option value="50">$50</option>
+                    <!-- ... Additional options for spending ... -->
+                </select>
+                <span id="displaySpent3"></span>
+            </td>
+            <td><input type="text" id="availableMoney3"><span id="displayAvailableMoney3"></span></td>
+            <td><input type="checkbox" id="approved3"><span id="displayApproved3"></span></td>
+        </tr>
+        <tr>
+            <td>20</td>
+            <td><input type="text" id="usedOn"><span id="displayUsedOn"></span></td>
+            <td>
+                <select>
+                    <option value="1">$1</option>
+                    <option value="2">$2</option>
+                    <option value="3">$3</option>
+        <option value="4">$4</option>
+        <option value="5">$5</option>
+        <option value="6">$6</option>
+        <option value="7">$7</option>
+        <option value="8">$8</option>
+        <option value="9">$9</option>
+        <option value="10">$10</option>
+        <option value="11">$11</option>
+        <option value="12">$12</option>
+        <option value="13">$13</option>
+        <option value="14">$14</option>
+        <option value="15">$15</option>
+        <option value="16">$16</option>
+        <option value="17">$17</option>
+        <option value="18">$18</option>
+        <option value="19">$19</option>
+        <option value="20">$20</option>
+        <option value="21">$21</option>
+        <option value="22">$22</option>
+        <option value="23">$23</option>
+        <option value="24">$24</option>
+        <option value="25">$25</option>
+        <option value="26">$26</option>
+        <option value="27">$27</option>
+        <option value="28">$28</option>
+        <option value="29">$29</option>
+        <option value="30">$30</option>
+        <option value="31">$31</option>
+        <option value="32">$32</option>
+        <option value="33">$33</option>
+        <option value="34">$34</option>
+        <option value="35">$35</option>
+        <option value="36">$36</option>
+        <option value="37">$37</option>
+        <option value="38">$38</option>
+        <option value="39">$39</option>
+        <option value="40">$40</option>
+        <option value="41">$41</option>
+        <option value="42">$42</option>
+        <option value="43">$43</option>
+        <option value="44">$44</option>
+        <option value="45">$45</option>
+        <option value="46">$46</option>
+        <option value="47">$47</option>
+        <option value="48">$48</option>
+        <option value="49">$49</option>
+        <option value="50">$50</option>
+                    <!-- ... Additional options for spending ... -->
+                </select>
+                <span id="displaySpent3"></span>
+            </td>
+            <td><input type="text" id="availableMoney3"><span id="displayAvailableMoney3"></span></td>
+            <td><input type="checkbox" id="approved3"><span id="displayApproved3"></span></td>
+        </tr>
+        <tr>
+            <td>21</td>
+            <td><input type="text" id="usedOn"><span id="displayUsedOn"></span></td>
+            <td>
+                <select>
+                    <option value="1">$1</option>
+                    <option value="2">$2</option>
+                    <option value="3">$3</option>
+        <option value="4">$4</option>
+        <option value="5">$5</option>
+        <option value="6">$6</option>
+        <option value="7">$7</option>
+        <option value="8">$8</option>
+        <option value="9">$9</option>
+        <option value="10">$10</option>
+        <option value="11">$11</option>
+        <option value="12">$12</option>
+        <option value="13">$13</option>
+        <option value="14">$14</option>
+        <option value="15">$15</option>
+        <option value="16">$16</option>
+        <option value="17">$17</option>
+        <option value="18">$18</option>
+        <option value="19">$19</option>
+        <option value="20">$20</option>
+        <option value="21">$21</option>
+        <option value="22">$22</option>
+        <option value="23">$23</option>
+        <option value="24">$24</option>
+        <option value="25">$25</option>
+        <option value="26">$26</option>
+        <option value="27">$27</option>
+        <option value="28">$28</option>
+        <option value="29">$29</option>
+        <option value="30">$30</option>
+        <option value="31">$31</option>
+        <option value="32">$32</option>
+        <option value="33">$33</option>
+        <option value="34">$34</option>
+        <option value="35">$35</option>
+        <option value="36">$36</option>
+        <option value="37">$37</option>
+        <option value="38">$38</option>
+        <option value="39">$39</option>
+        <option value="40">$40</option>
+        <option value="41">$41</option>
+        <option value="42">$42</option>
+        <option value="43">$43</option>
+        <option value="44">$44</option>
+        <option value="45">$45</option>
+        <option value="46">$46</option>
+        <option value="47">$47</option>
+        <option value="48">$48</option>
+        <option value="49">$49</option>
+        <option value="50">$50</option>
+                    <!-- ... Additional options for spending ... -->
+                </select>
+                <span id="displaySpent3"></span>
+            </td>
+            <td><input type="text" id="availableMoney3"><span id="displayAvailableMoney3"></span></td>
+            <td><input type="checkbox" id="approved3"><span id="displayApproved3"></span></td>
+        </tr>
+        <tr>
+            <td>22</td>
+            <td><input type="text" id="usedOn"><span id="displayUsedOn"></span></td>
+            <td>
+                <select>
+                    <option value="1">$1</option>
+                    <option value="2">$2</option>
+                    <option value="3">$3</option>
+        <option value="4">$4</option>
+        <option value="5">$5</option>
+        <option value="6">$6</option>
+        <option value="7">$7</option>
+        <option value="8">$8</option>
+        <option value="9">$9</option>
+        <option value="10">$10</option>
+        <option value="11">$11</option>
+        <option value="12">$12</option>
+        <option value="13">$13</option>
+        <option value="14">$14</option>
+        <option value="15">$15</option>
+        <option value="16">$16</option>
+        <option value="17">$17</option>
+        <option value="18">$18</option>
+        <option value="19">$19</option>
+        <option value="20">$20</option>
+        <option value="21">$21</option>
+        <option value="22">$22</option>
+        <option value="23">$23</option>
+        <option value="24">$24</option>
+        <option value="25">$25</option>
+        <option value="26">$26</option>
+        <option value="27">$27</option>
+        <option value="28">$28</option>
+        <option value="29">$29</option>
+        <option value="30">$30</option>
+        <option value="31">$31</option>
+        <option value="32">$32</option>
+        <option value="33">$33</option>
+        <option value="34">$34</option>
+        <option value="35">$35</option>
+        <option value="36">$36</option>
+        <option value="37">$37</option>
+        <option value="38">$38</option>
+        <option value="39">$39</option>
+        <option value="40">$40</option>
+        <option value="41">$41</option>
+        <option value="42">$42</option>
+        <option value="43">$43</option>
+        <option value="44">$44</option>
+        <option value="45">$45</option>
+        <option value="46">$46</option>
+        <option value="47">$47</option>
+        <option value="48">$48</option>
+        <option value="49">$49</option>
+        <option value="50">$50</option>
+                    <!-- ... Additional options for spending ... -->
+                </select>
+                <span id="displaySpent3"></span>
+            </td>
+            <td><input type="text" id="availableMoney3"><span id="displayAvailableMoney3"></span></td>
+            <td><input type="checkbox" id="approved3"><span id="displayApproved3"></span></td>
+        </tr>
+        <tr>
+            <td>23</td>
+            <td><input type="text" id="usedOn"><span id="displayUsedOn"></span></td>
+            <td>
+                <select>
+                    <option value="1">$1</option>
+                    <option value="2">$2</option>
+                    <option value="3">$3</option>
+        <option value="4">$4</option>
+        <option value="5">$5</option>
+        <option value="6">$6</option>
+        <option value="7">$7</option>
+        <option value="8">$8</option>
+        <option value="9">$9</option>
+        <option value="10">$10</option>
+        <option value="11">$11</option>
+        <option value="12">$12</option>
+        <option value="13">$13</option>
+        <option value="14">$14</option>
+        <option value="15">$15</option>
+        <option value="16">$16</option>
+        <option value="17">$17</option>
+        <option value="18">$18</option>
+        <option value="19">$19</option>
+        <option value="20">$20</option>
+        <option value="21">$21</option>
+        <option value="22">$22</option>
+        <option value="23">$23</option>
+        <option value="24">$24</option>
+        <option value="25">$25</option>
+        <option value="26">$26</option>
+        <option value="27">$27</option>
+        <option value="28">$28</option>
+        <option value="29">$29</option>
+        <option value="30">$30</option>
+        <option value="31">$31</option>
+        <option value="32">$32</option>
+        <option value="33">$33</option>
+        <option value="34">$34</option>
+        <option value="35">$35</option>
+        <option value="36">$36</option>
+        <option value="37">$37</option>
+        <option value="38">$38</option>
+        <option value="39">$39</option>
+        <option value="40">$40</option>
+        <option value="41">$41</option>
+        <option value="42">$42</option>
+        <option value="43">$43</option>
+        <option value="44">$44</option>
+        <option value="45">$45</option>
+        <option value="46">$46</option>
+        <option value="47">$47</option>
+        <option value="48">$48</option>
+        <option value="49">$49</option>
+        <option value="50">$50</option>
+                    <!-- ... Additional options for spending ... -->
+                </select>
+                <span id="displaySpent3"></span>
+            </td>
+            <td><input type="text" id="availableMoney3"><span id="displayAvailableMoney3"></span></td>
+            <td><input type="checkbox" id="approved3"><span id="displayApproved3"></span></td>
+        </tr>
+        <tr>
+            <td>24</td>
+            <td><input type="text" id="usedOn"><span id="displayUsedOn"></span></td>
+            <td>
+                <select>
+                    <option value="1">$1</option>
+                    <option value="2">$2</option>
+                    <option value="3">$3</option>
+        <option value="4">$4</option>
+        <option value="5">$5</option>
+        <option value="6">$6</option>
+        <option value="7">$7</option>
+        <option value="8">$8</option>
+        <option value="9">$9</option>
+        <option value="10">$10</option>
+        <option value="11">$11</option>
+        <option value="12">$12</option>
+        <option value="13">$13</option>
+        <option value="14">$14</option>
+        <option value="15">$15</option>
+        <option value="16">$16</option>
+        <option value="17">$17</option>
+        <option value="18">$18</option>
+        <option value="19">$19</option>
+        <option value="20">$20</option>
+        <option value="21">$21</option>
+        <option value="22">$22</option>
+        <option value="23">$23</option>
+        <option value="24">$24</option>
+        <option value="25">$25</option>
+        <option value="26">$26</option>
+        <option value="27">$27</option>
+        <option value="28">$28</option>
+        <option value="29">$29</option>
+        <option value="30">$30</option>
+        <option value="31">$31</option>
+        <option value="32">$32</option>
+        <option value="33">$33</option>
+        <option value="34">$34</option>
+        <option value="35">$35</option>
+        <option value="36">$36</option>
+        <option value="37">$37</option>
+        <option value="38">$38</option>
+        <option value="39">$39</option>
+        <option value="40">$40</option>
+        <option value="41">$41</option>
+        <option value="42">$42</option>
+        <option value="43">$43</option>
+        <option value="44">$44</option>
+        <option value="45">$45</option>
+        <option value="46">$46</option>
+        <option value="47">$47</option>
+        <option value="48">$48</option>
+        <option value="49">$49</option>
+        <option value="50">$50</option>
+                    <!-- ... Additional options for spending ... -->
+                </select>
+                <span id="displaySpent3"></span>
+            </td>
+            <td><input type="text" id="availableMoney3"><span id="displayAvailableMoney3"></span></td>
+            <td><input type="checkbox" id="approved3"><span id="displayApproved3"></span></td>
+        </tr>
+        <tr>
+            <td>25</td>
+            <td><input type="text" id="usedOn"><span id="displayUsedOn"></span></td>
+            <td>
+                <select>
+                    <option value="1">$1</option>
+                    <option value="2">$2</option>
+                    <option value="3">$3</option>
+        <option value="4">$4</option>
+        <option value="5">$5</option>
+        <option value="6">$6</option>
+        <option value="7">$7</option>
+        <option value="8">$8</option>
+        <option value="9">$9</option>
+        <option value="10">$10</option>
+        <option value="11">$11</option>
+        <option value="12">$12</option>
+        <option value="13">$13</option>
+        <option value="14">$14</option>
+        <option value="15">$15</option>
+        <option value="16">$16</option>
+        <option value="17">$17</option>
+        <option value="18">$18</option>
+        <option value="19">$19</option>
+        <option value="20">$20</option>
+        <option value="21">$21</option>
+        <option value="22">$22</option>
+        <option value="23">$23</option>
+        <option value="24">$24</option>
+        <option value="25">$25</option>
+        <option value="26">$26</option>
+        <option value="27">$27</option>
+        <option value="28">$28</option>
+        <option value="29">$29</option>
+        <option value="30">$30</option>
+        <option value="31">$31</option>
+        <option value="32">$32</option>
+        <option value="33">$33</option>
+        <option value="34">$34</option>
+        <option value="35">$35</option>
+        <option value="36">$36</option>
+        <option value="37">$37</option>
+        <option value="38">$38</option>
+        <option value="39">$39</option>
+        <option value="40">$40</option>
+        <option value="41">$41</option>
+        <option value="42">$42</option>
+        <option value="43">$43</option>
+        <option value="44">$44</option>
+        <option value="45">$45</option>
+        <option value="46">$46</option>
+        <option value="47">$47</option>
+        <option value="48">$48</option>
+        <option value="49">$49</option>
+        <option value="50">$50</option>
+                    <!-- ... Additional options for spending ... -->
+                </select>
+                <span id="displaySpent3"></span>
+            </td>
+            <td><input type="text" id="availableMoney3"><span id="displayAvailableMoney3"></span></td>
+            <td><input type="checkbox" id="approved3"><span id="displayApproved3"></span></td>
+        </tr>
+        <tr>
+            <td>26</td>
+            <td><input type="text" id="usedOn"><span id="displayUsedOn"></span></td>
+            <td>
+                <select>
+                    <option value="1">$1</option>
+                    <option value="2">$2</option>
+                    <option value="3">$3</option>
+        <option value="4">$4</option>
+        <option value="5">$5</option>
+        <option value="6">$6</option>
+        <option value="7">$7</option>
+        <option value="8">$8</option>
+        <option value="9">$9</option>
+        <option value="10">$10</option>
+        <option value="11">$11</option>
+        <option value="12">$12</option>
+        <option value="13">$13</option>
+        <option value="14">$14</option>
+        <option value="15">$15</option>
+        <option value="16">$16</option>
+        <option value="17">$17</option>
+        <option value="18">$18</option>
+        <option value="19">$19</option>
+        <option value="20">$20</option>
+        <option value="21">$21</option>
+        <option value="22">$22</option>
+        <option value="23">$23</option>
+        <option value="24">$24</option>
+        <option value="25">$25</option>
+        <option value="26">$26</option>
+        <option value="27">$27</option>
+        <option value="28">$28</option>
+        <option value="29">$29</option>
+        <option value="30">$30</option>
+        <option value="31">$31</option>
+        <option value="32">$32</option>
+        <option value="33">$33</option>
+        <option value="34">$34</option>
+        <option value="35">$35</option>
+        <option value="36">$36</option>
+        <option value="37">$37</option>
+        <option value="38">$38</option>
+        <option value="39">$39</option>
+        <option value="40">$40</option>
+        <option value="41">$41</option>
+        <option value="42">$42</option>
+        <option value="43">$43</option>
+        <option value="44">$44</option>
+        <option value="45">$45</option>
+        <option value="46">$46</option>
+        <option value="47">$47</option>
+        <option value="48">$48</option>
+        <option value="49">$49</option>
+        <option value="50">$50</option>
+                    <!-- ... Additional options for spending ... -->
+                </select>
+                <span id="displaySpent3"></span>
+            </td>
+            <td><input type="text" id="availableMoney3"><span id="displayAvailableMoney3"></span></td>
+            <td><input type="checkbox" id="approved3"><span id="displayApproved3"></span></td>
+        </tr>
+        <tr>
+            <td>27</td>
+            <td><input type="text" id="usedOn"><span id="displayUsedOn"></span></td>
+            <td>
+                <select>
+                    <option value="1">$1</option>
+                    <option value="2">$2</option>
+                    <option value="3">$3</option>
+        <option value="4">$4</option>
+        <option value="5">$5</option>
+        <option value="6">$6</option>
+        <option value="7">$7</option>
+        <option value="8">$8</option>
+        <option value="9">$9</option>
+        <option value="10">$10</option>
+        <option value="11">$11</option>
+        <option value="12">$12</option>
+        <option value="13">$13</option>
+        <option value="14">$14</option>
+        <option value="15">$15</option>
+        <option value="16">$16</option>
+        <option value="17">$17</option>
+        <option value="18">$18</option>
+        <option value="19">$19</option>
+        <option value="20">$20</option>
+        <option value="21">$21</option>
+        <option value="22">$22</option>
+        <option value="23">$23</option>
+        <option value="24">$24</option>
+        <option value="25">$25</option>
+        <option value="26">$26</option>
+        <option value="27">$27</option>
+        <option value="28">$28</option>
+        <option value="29">$29</option>
+        <option value="30">$30</option>
+        <option value="31">$31</option>
+        <option value="32">$32</option>
+        <option value="33">$33</option>
+        <option value="34">$34</option>
+        <option value="35">$35</option>
+        <option value="36">$36</option>
+        <option value="37">$37</option>
+        <option value="38">$38</option>
+        <option value="39">$39</option>
+        <option value="40">$40</option>
+        <option value="41">$41</option>
+        <option value="42">$42</option>
+        <option value="43">$43</option>
+        <option value="44">$44</option>
+        <option value="45">$45</option>
+        <option value="46">$46</option>
+        <option value="47">$47</option>
+        <option value="48">$48</option>
+        <option value="49">$49</option>
+        <option value="50">$50</option>
+                    <!-- ... Additional options for spending ... -->
+                </select>
+                <span id="displaySpent3"></span>
+            </td>
+            <td><input type="text" id="availableMoney3"><span id="displayAvailableMoney3"></span></td>
+            <td><input type="checkbox" id="approved3"><span id="displayApproved3"></span></td>
+        </tr>
+        <tr>
+            <td>28</td>
+            <td><input type="text" id="usedOn"><span id="displayUsedOn"></span></td>
+            <td>
+                <select>
+                    <option value="1">$1</option>
+                    <option value="2">$2</option>
+                    <option value="3">$3</option>
+        <option value="4">$4</option>
+        <option value="5">$5</option>
+        <option value="6">$6</option>
+        <option value="7">$7</option>
+        <option value="8">$8</option>
+        <option value="9">$9</option>
+        <option value="10">$10</option>
+        <option value="11">$11</option>
+        <option value="12">$12</option>
+        <option value="13">$13</option>
+        <option value="14">$14</option>
+        <option value="15">$15</option>
+        <option value="16">$16</option>
+        <option value="17">$17</option>
+        <option value="18">$18</option>
+        <option value="19">$19</option>
+        <option value="20">$20</option>
+        <option value="21">$21</option>
+        <option value="22">$22</option>
+        <option value="23">$23</option>
+        <option value="24">$24</option>
+        <option value="25">$25</option>
+        <option value="26">$26</option>
+        <option value="27">$27</option>
+        <option value="28">$28</option>
+        <option value="29">$29</option>
+        <option value="30">$30</option>
+        <option value="31">$31</option>
+        <option value="32">$32</option>
+        <option value="33">$33</option>
+        <option value="34">$34</option>
+        <option value="35">$35</option>
+        <option value="36">$36</option>
+        <option value="37">$37</option>
+        <option value="38">$38</option>
+        <option value="39">$39</option>
+        <option value="40">$40</option>
+        <option value="41">$41</option>
+        <option value="42">$42</option>
+        <option value="43">$43</option>
+        <option value="44">$44</option>
+        <option value="45">$45</option>
+        <option value="46">$46</option>
+        <option value="47">$47</option>
+        <option value="48">$48</option>
+        <option value="49">$49</option>
+        <option value="50">$50</option>
+                    <!-- ... Additional options for spending ... -->
+                </select>
+                <span id="displaySpent3"></span>
+            </td>
+            <td><input type="text" id="availableMoney3"><span id="displayAvailableMoney3"></span></td>
+            <td><input type="checkbox" id="approved3"><span id="displayApproved3"></span></td>
+        </tr>
+        <tr>
+            <td>29</td>
+            <td><input type="text" id="usedOn"><span id="displayUsedOn"></span></td>
+            <td>
+                <select>
+                    <option value="1">$1</option>
+                    <option value="2">$2</option>
+                    <option value="3">$3</option>
+        <option value="4">$4</option>
+        <option value="5">$5</option>
+        <option value="6">$6</option>
+        <option value="7">$7</option>
+        <option value="8">$8</option>
+        <option value="9">$9</option>
+        <option value="10">$10</option>
+        <option value="11">$11</option>
+        <option value="12">$12</option>
+        <option value="13">$13</option>
+        <option value="14">$14</option>
+        <option value="15">$15</option>
+        <option value="16">$16</option>
+        <option value="17">$17</option>
+        <option value="18">$18</option>
+        <option value="19">$19</option>
+        <option value="20">$20</option>
+        <option value="21">$21</option>
+        <option value="22">$22</option>
+        <option value="23">$23</option>
+        <option value="24">$24</option>
+        <option value="25">$25</option>
+        <option value="26">$26</option>
+        <option value="27">$27</option>
+        <option value="28">$28</option>
+        <option value="29">$29</option>
+        <option value="30">$30</option>
+        <option value="31">$31</option>
+        <option value="32">$32</option>
+        <option value="33">$33</option>
+        <option value="34">$34</option>
+        <option value="35">$35</option>
+        <option value="36">$36</option>
+        <option value="37">$37</option>
+        <option value="38">$38</option>
+        <option value="39">$39</option>
+        <option value="40">$40</option>
+        <option value="41">$41</option>
+        <option value="42">$42</option>
+        <option value="43">$43</option>
+        <option value="44">$44</option>
+        <option value="45">$45</option>
+        <option value="46">$46</option>
+        <option value="47">$47</option>
+        <option value="48">$48</option>
+        <option value="49">$49</option>
+        <option value="50">$50</option>
+                    <!-- ... Additional options for spending ... -->
+                </select>
+                <span id="displaySpent3"></span>
+            </td>
+            <td><input type="text" id="availableMoney3"><span id="displayAvailableMoney3"></span></td>
+            <td><input type="checkbox" id="approved3"><span id="displayApproved3"></span></td>
+        </tr>
+        <tr>
+            <td>30</td>
+            <td><input type="text" id="usedOn"><span id="displayUsedOn"></span></td>
+            <td>
+                <select>
+                    <option value="1">$1</option>
+                    <option value="2">$2</option>
+                    <option value="3">$3</option>
+        <option value="4">$4</option>
+        <option value="5">$5</option>
+        <option value="6">$6</option>
+        <option value="7">$7</option>
+        <option value="8">$8</option>
+        <option value="9">$9</option>
+        <option value="10">$10</option>
+        <option value="11">$11</option>
+        <option value="12">$12</option>
+        <option value="13">$13</option>
+        <option value="14">$14</option>
+        <option value="15">$15</option>
+        <option value="16">$16</option>
+        <option value="17">$17</option>
+        <option value="18">$18</option>
+        <option value="19">$19</option>
+        <option value="20">$20</option>
+        <option value="21">$21</option>
+        <option value="22">$22</option>
+        <option value="23">$23</option>
+        <option value="24">$24</option>
+        <option value="25">$25</option>
+        <option value="26">$26</option>
+        <option value="27">$27</option>
+        <option value="28">$28</option>
+        <option value="29">$29</option>
+        <option value="30">$30</option>
+        <option value="31">$31</option>
+        <option value="32">$32</option>
+        <option value="33">$33</option>
+        <option value="34">$34</option>
+        <option value="35">$35</option>
+        <option value="36">$36</option>
+        <option value="37">$37</option>
+        <option value="38">$38</option>
+        <option value="39">$39</option>
+        <option value="40">$40</option>
+        <option value="41">$41</option>
+        <option value="42">$42</option>
+        <option value="43">$43</option>
+        <option value="44">$44</option>
+        <option value="45">$45</option>
+        <option value="46">$46</option>
+        <option value="47">$47</option>
+        <option value="48">$48</option>
+        <option value="49">$49</option>
+        <option value="50">$50</option>
+                    <!-- ... Additional options for spending ... -->
+                </select>
+                <span id="displaySpent3"></span>
+            </td>
+            <td><input type="text" id="availableMoney3"><span id="displayAvailableMoney3"></span></td>
+            <td><input type="checkbox" id="approved3"><span id="displayApproved3"></span></td>
+        </tr>
+        <tr>
+            <td>31</td>
+            <td><input type="text" id="usedOn"><span id="displayUsedOn"></span></td>
+            <td>
+                <select>
+                    <option value="1">$1</option>
+                    <option value="2">$2</option>
+                    <option value="3">$3</option>
+        <option value="4">$4</option>
+        <option value="5">$5</option>
+        <option value="6">$6</option>
+        <option value="7">$7</option>
+        <option value="8">$8</option>
+        <option value="9">$9</option>
+        <option value="10">$10</option>
+        <option value="11">$11</option>
+        <option value="12">$12</option>
+        <option value="13">$13</option>
+        <option value="14">$14</option>
+        <option value="15">$15</option>
+        <option value="16">$16</option>
+        <option value="17">$17</option>
+        <option value="18">$18</option>
+        <option value="19">$19</option>
+        <option value="20">$20</option>
+        <option value="21">$21</option>
+        <option value="22">$22</option>
+        <option value="23">$23</option>
+        <option value="24">$24</option>
+        <option value="25">$25</option>
+        <option value="26">$26</option>
+        <option value="27">$27</option>
+        <option value="28">$28</option>
+        <option value="29">$29</option>
+        <option value="30">$30</option>
+        <option value="31">$31</option>
+        <option value="32">$32</option>
+        <option value="33">$33</option>
+        <option value="34">$34</option>
+        <option value="35">$35</option>
+        <option value="36">$36</option>
+        <option value="37">$37</option>
+        <option value="38">$38</option>
+        <option value="39">$39</option>
+        <option value="40">$40</option>
+        <option value="41">$41</option>
+        <option value="42">$42</option>
+        <option value="43">$43</option>
+        <option value="44">$44</option>
+        <option value="45">$45</option>
+        <option value="46">$46</option>
+        <option value="47">$47</option>
+        <option value="48">$48</option>
+        <option value="49">$49</option>
+        <option value="50">$50</option>
+                    <!-- ... Additional options for spending ... -->
+                </select>
+                <span id="displaySpent3"></span>
+            </td>
+            <td><input type="text" id="availableMoney3"><span id="displayAvailableMoney3"></span></td>
+            <td><input type="checkbox" id="approved3"><span id="displayApproved3"></span></td>
+        </tr>
+        <!-- ... Rows for other days ... -->
+    </table>
+        <button id="printButton">Print Changes</button>
+    <script>
+            // Add event listener to the "Print Changes" button
+const printButton = document.getElementById("printButton");
+printButton.addEventListener("click", function () {
+    window.print();
+});
+const spentSelect = document.getElementById("spent");
+const displaySpent = document.getElementById("displaySpent");
+
+// Function to update the "Spent" placeholder and save it in local storage
+function updateSpent() {
+    const selectedValue = spentSelect.value;
+    displaySpent.textContent = selectedValue;
+
+    // Save the selected value in local storage
+    localStorage.setItem("selectedSpent", selectedValue);
+}
+
+// Retrieve the "Spent" value from local storage when the page loads
+window.addEventListener("load", function () {
+    const savedSpent = localStorage.getItem("selectedSpent");
+    if (savedSpent) {
+        spentSelect.value = savedSpent;
+        updateSpent(); // Update the displayed value
+    }
+});
+
+// Add an event listener to capture changes in the "Spent" field
+spentSelect.addEventListener("change", updateSpent);
+
+// Get references to the input elements and placeholders for "Used On" and "Approved"
+const usedOnInput = document.getElementById("usedOn");
+const displayUsedOn = document.getElementById("displayUsedOn");
+const approvedCheckbox = document.getElementById("approved");
+const displayApproved = document.getElementById("displayApproved");
+
+// Function to update the "Used On" placeholder and save it in local storage
+function updateUsedOn() {
+    const enteredValue = usedOnInput.value;
+    displayUsedOn.textContent = enteredValue;
+
+    // Save the entered value in local storage
+    localStorage.setItem("enteredUsedOn", enteredValue);
+}
+
+// Function to update the "Approved" placeholder and save it in local storage
+function updateApproved() {
+    const isChecked = approvedCheckbox.checked;
+    displayApproved.textContent = isChecked ? "Yes" : "No";
+
+    // Save the checked state in local storage
+    localStorage.setItem("isCheckedApproved", isChecked);
+}
+
+// Retrieve the "Used On" value from local storage when the page loads
+window.addEventListener("load", function () {
+    const savedUsedOn = localStorage.getItem("enteredUsedOn");
+    if (savedUsedOn) {
+        usedOnInput.value = savedUsedOn;
+        updateUsedOn(); // Update the displayed value
+    }
+
+    const savedApproved = localStorage.getItem("isCheckedApproved");
+    if (savedApproved) {
+        approvedCheckbox.checked = savedApproved === "true";
+        updateApproved(); // Update the displayed value
+    }
+});
+
+// Add event listeners to capture changes in the "Used On" and "Approved" fields
+usedOnInput.addEventListener("input", updateUsedOn);
+approvedCheckbox.addEventListener("change", updateApproved);
+
+// Get references to the input element and placeholder for "Available Money"
+const availableMoneyInput = document.getElementById("availableMoney");
+const displayAvailableMoney = document.getElementById("displayAvailableMoney");
+
+// Function to update the "Available Money" placeholder and save it in local storage
+function updateAvailableMoney() {
+    const enteredValue = availableMoneyInput.value;
+    displayAvailableMoney.textContent = enteredValue;
+
+    // Save the entered value in local storage
+    localStorage.setItem("enteredAvailableMoney", enteredValue);
+}
+
+// Retrieve the "Available Money" value from local storage when the page loads
+window.addEventListener("load", function () {
+    const savedAvailableMoney = localStorage.getItem("enteredAvailableMoney");
+    if (savedAvailableMoney) {
+        availableMoneyInput.value = savedAvailableMoney;
+        updateAvailableMoney(); // Update the displayed value
+    }
+});
+
+// Add an event listener to capture changes in the "Available Money" field
+availableMoneyInput.addEventListener("input", updateAvailableMoney);
+
+// Get references to the input elements and placeholders for Day 2
+const usedOnInput2 = document.getElementById("usedOn2");
+const displayUsedOn2 = document.getElementById("displayUsedOn2");
+const spentSelect2 = document.getElementById("spent2");
+const displaySpent2 = document.getElementById("displaySpent2");
+const availableMoneyInput2 = document.getElementById("availableMoney2");
+const displayAvailableMoney2 = document.getElementById("displayAvailableMoney2");
+const approvedCheckbox2 = document.getElementById("approved2");
+const displayApproved2 = document.getElementById("displayApproved2");
+
+// Function to update Day 2 "Used On" placeholder and save it in local storage
+function updateUsedOn2() {
+    const enteredValue = usedOnInput2.value;
+    displayUsedOn2.textContent = enteredValue;
+    localStorage.setItem("enteredUsedOn2", enteredValue);
+}
+
+// Function to update Day 2 "Spent" placeholder and save it in local storage
+function updateSpent2() {
+    const selectedValue = spentSelect2.value;
+    displaySpent2.textContent = selectedValue;
+    localStorage.setItem("selectedSpent2", selectedValue);
+}
+
+// Function to update Day 2 "Available Money" placeholder and save it in local storage
+function updateAvailableMoney2() {
+    const enteredValue = availableMoneyInput2.value;
+    displayAvailableMoney2.textContent = enteredValue;
+    localStorage.setItem("enteredAvailableMoney2", enteredValue);
+}
+
+// Function to update Day 2 "Approved" placeholder and save it in local storage
+function updateApproved2() {
+    const isChecked = approvedCheckbox2.checked;
+    displayApproved2.textContent = isChecked ? "Yes" : "No";
+    localStorage.setItem("isCheckedApproved2", isChecked);
+}
+
+// Retrieve Day 2 values from local storage when the page loads
+window.addEventListener("load", function () {
+    const savedUsedOn2 = localStorage.getItem("enteredUsedOn2");
+    if (savedUsedOn2) {
+        usedOnInput2.value = savedUsedOn2;
+        updateUsedOn2();
+    }
+
+    const savedSpent2 = localStorage.getItem("selectedSpent2");
+    if (savedSpent2) {
+        spentSelect2.value = savedSpent2;
+        updateSpent2();
+    }
+
+    const savedAvailableMoney2 = localStorage.getItem("enteredAvailableMoney2");
+    if (savedAvailableMoney2) {
+        availableMoneyInput2.value = savedAvailableMoney2;
+        updateAvailableMoney2();
+    }
+
+    const savedApproved2 = localStorage.getItem("isCheckedApproved2");
+    if (savedApproved2) {
+        approvedCheckbox2.checked = savedApproved2 === "true";
+        updateApproved2();
+    }
+});
+
+// Add event listeners to capture changes in Day 2 input fields
+usedOnInput2.addEventListener("input", updateUsedOn2);
+spentSelect2.addEventListener("change", updateSpent2);
+availableMoneyInput2.addEventListener("input", updateAvailableMoney2);
+approvedCheckbox2.addEventListener("change", updateApproved2);
+
+// Get references to the input elements and placeholders for Day 3
+const usedOnInput3 = document.getElementById("usedOn3");
+const displayUsedOn3 = document.getElementById("displayUsedOn3");
+const spentSelect3 = document.getElementById("spent3");
+const displaySpent3 = document.getElementById("displaySpent3");
+const availableMoneyInput3 = document.getElementById("availableMoney3");
+const displayAvailableMoney3 = document.getElementById("displayAvailableMoney3");
+const approvedCheckbox3 = document.getElementById("approved3");
+const displayApproved3 = document.getElementById("displayApproved3");
+
+// Function to update Day 3 "Used On" placeholder and save it in local storage
+function updateUsedOn3() {
+    const enteredValue = usedOnInput3.value;
+    displayUsedOn3.textContent = enteredValue;
+    localStorage.setItem("enteredUsedOn3", enteredValue);
+}
+
+// Function to update Day 3 "Spent" placeholder and save it in local storage
+function updateSpent3() {
+    const selectedValue = spentSelect3.value;
+    displaySpent3.textContent = selectedValue;
+    localStorage.setItem("selectedSpent3", selectedValue);
+}
+
+// Function to update Day 3 "Available Money" placeholder and save it in local storage
+function updateAvailableMoney3() {
+    const enteredValue = availableMoneyInput3.value;
+    displayAvailableMoney3.textContent = enteredValue;
+    localStorage.setItem("enteredAvailableMoney3", enteredValue);
+}
+
+// Function to update Day 3 "Approved" placeholder and save it in local storage
+function updateApproved3() {
+    const isChecked = approvedCheckbox3.checked;
+    displayApproved3.textContent = isChecked ? "Yes" : "No";
+    localStorage.setItem("isCheckedApproved3", isChecked);
+}
+
+// Retrieve Day 3 values from local storage when the page loads
+window.addEventListener("load", function () {
+    const savedUsedOn3 = localStorage.getItem("enteredUsedOn3");
+    if (savedUsedOn3) {
+        usedOnInput3.value = savedUsedOn3;
+        updateUsedOn3();
+    }
+
+    const savedSpent3 = localStorage.getItem("selectedSpent3");
+    if (savedSpent3) {
+        spentSelect3.value = savedSpent3;
+        updateSpent3();
+    }
+
+    const savedAvailableMoney3 = localStorage.getItem("enteredAvailableMoney3");
+    if (savedAvailableMoney3) {
+        availableMoneyInput3.value = savedAvailableMoney3;
+        updateAvailableMoney3();
+    }
+
+    const savedApproved3 = localStorage.getItem("isCheckedApproved3");
+    if (savedApproved3) {
+        approvedCheckbox3.checked = savedApproved3 === "true";
+        updateApproved3();
+    }
+});
+
+// Add event listeners to capture changes in input fields for Day 3
+usedOnInput3.addEventListener("input", updateUsedOn3);
+spentSelect3.addEventListener("change", updateSpent3);
+availableMoneyInput3.addEventListener("input", updateAvailableMoney3);
+approvedCheckbox3.addEventListener("change", updateApproved3);
+
+// Get references to the input elements and placeholders for Day 4
+const usedOnInput4 = document.getElementById("usedOn4");
+const displayUsedOn4 = document.getElementById("displayUsedOn4");
+const spentSelect4 = document.getElementById("spent4");
+const displaySpent4 = document.getElementById("displaySpent4");
+const availableMoneyInput4 = document.getElementById("availableMoney4");
+const displayAvailableMoney4 = document.getElementById("displayAvailableMoney4");
+const approvedCheckbox4 = document.getElementById("approved4");
+const displayApproved4 = document.getElementById("displayApproved4");
+
+// Function to update Day 4 "Used On" placeholder and save it in local storage
+function updateUsedOn4() {
+    const enteredValue = usedOnInput4.value;
+    displayUsedOn4.textContent = enteredValue;
+    localStorage.setItem("enteredUsedOn4", enteredValue);
+}
+
+// Function to update Day 4 "Spent" placeholder and save it in local storage
+function updateSpent4() {
+    const selectedValue = spentSelect4.value;
+    displaySpent4.textContent = selectedValue;
+    localStorage.setItem("selectedSpent4", selectedValue);
+}
+
+// Function to update Day 4 "Available Money" placeholder and save it in local storage
+function updateAvailableMoney4() {
+    const enteredValue = availableMoneyInput4.value;
+    displayAvailableMoney4.textContent = enteredValue;
+    localStorage.setItem("enteredAvailableMoney4", enteredValue);
+}
+
+// Function to update Day 4 "Approved" placeholder and save it in local storage
+function updateApproved4() {
+    const isChecked = approvedCheckbox4.checked;
+    displayApproved4.textContent = isChecked ? "Yes" : "No";
+    localStorage.setItem("isCheckedApproved4", isChecked);
+}
+
+// Retrieve Day 4 values from local storage when the page loads
+window.addEventListener("load", function () {
+    const savedUsedOn4 = localStorage.getItem("enteredUsedOn4");
+    if (savedUsedOn4) {
+        usedOnInput4.value = savedUsedOn4;
+        updateUsedOn4();
+    }
+
+    const savedSpent4 = localStorage.getItem("selectedSpent4");
+    if (savedSpent4) {
+        spentSelect4.value = savedSpent4;
+        updateSpent4();
+    }
+
+    const savedAvailableMoney4 = localStorage.getItem("enteredAvailableMoney4");
+    if (savedAvailableMoney4) {
+        availableMoneyInput4.value = savedAvailableMoney4;
+        updateAvailableMoney4();
+    }
+
+    const savedApproved4 = localStorage.getItem("isCheckedApproved4");
+    if (savedApproved4) {
+        approvedCheckbox4.checked = savedApproved4 === "true";
+        updateApproved4();
+    }
+});
+
+// Add event listeners to capture changes in input fields for Day 4
+usedOnInput4.addEventListener("input", updateUsedOn4);
+spentSelect4.addEventListener("change", updateSpent4);
+availableMoneyInput4.addEventListener("input", updateAvailableMoney4);
+approvedCheckbox4.addEventListener("change", updateApproved4);
+// Get references to the input elements and placeholders for Day 5
+const usedOnInput5 = document.getElementById("usedOn5");
+const displayUsedOn5 = document.getElementById("displayUsedOn5");
+const spentSelect5 = document.getElementById("spent5");
+const displaySpent5 = document.getElementById("displaySpent5");
+const availableMoneyInput5 = document.getElementById("availableMoney5");
+const displayAvailableMoney5 = document.getElementById("displayAvailableMoney5");
+const approvedCheckbox5 = document.getElementById("approved5");
+const displayApproved5 = document.getElementById("displayApproved5");
+
+// Function to update Day 5 "Used On" placeholder and save it in local storage
+function updateUsedOn5() {
+    const enteredValue = usedOnInput5.value;
+    displayUsedOn5.textContent = enteredValue;
+    localStorage.setItem("enteredUsedOn5", enteredValue);
+}
+
+// Function to update Day 5 "Spent" placeholder and save it in local storage
+function updateSpent5() {
+    const selectedValue = spentSelect5.value;
+    displaySpent5.textContent = selectedValue;
+    localStorage.setItem("selectedSpent5", selectedValue);
+}
+
+// Function to update Day 5 "Available Money" placeholder and save it in local storage
+function updateAvailableMoney5() {
+    const enteredValue = availableMoneyInput5.value;
+    displayAvailableMoney5.textContent = enteredValue;
+    localStorage.setItem("enteredAvailableMoney5", enteredValue);
+}
+
+// Function to update Day 5 "Approved" placeholder and save it in local storage
+function updateApproved5() {
+    const isChecked = approvedCheckbox5.checked;
+    displayApproved5.textContent = isChecked ? "Yes" : "No";
+    localStorage.setItem("isCheckedApproved5", isChecked);
+}
+
+// Retrieve Day 5 values from local storage when the page loads
+window.addEventListener("load", function () {
+    const savedUsedOn5 = localStorage.getItem("enteredUsedOn5");
+    if (savedUsedOn5) {
+        usedOnInput5.value = savedUsedOn5;
+        updateUsedOn5();
+    }
+
+    const savedSpent5 = localStorage.getItem("selectedSpent5");
+    if (savedSpent5) {
+        spentSelect5.value = savedSpent5;
+        updateSpent5();
+    }
+
+    const savedAvailableMoney5 = localStorage.getItem("enteredAvailableMoney5");
+    if (savedAvailableMoney5) {
+        availableMoneyInput5.value = savedAvailableMoney5;
+        updateAvailableMoney5();
+    }
+
+    const savedApproved5 = localStorage.getItem("isCheckedApproved5");
+    if (savedApproved5) {
+        approvedCheckbox5.checked = savedApproved5 === "true";
+        updateApproved5();
+    }
+});
+
+// Add event listeners to capture changes in input fields for Day 5
+usedOnInput5.addEventListener("input", updateUsedOn5);
+spentSelect5.addEventListener("change", updateSpent5);
+availableMoneyInput5.addEventListener("input", updateAvailableMoney5);
+approvedCheckbox5.addEventListener("change", updateApproved5);
+// Get references to the input elements and placeholders for Day 7
+const usedOnInput7 = document.getElementById("usedOn7");
+const displayUsedOn7 = document.getElementById("displayUsedOn7");
+const spentSelect7 = document.getElementById("spent7");
+const displaySpent7 = document.getElementById("displaySpent7");
+const availableMoneyInput7 = document.getElementById("availableMoney7");
+const displayAvailableMoney7 = document.getElementById("displayAvailableMoney7");
+const approvedCheckbox7 = document.getElementById("approved7");
+const displayApproved7 = document.getElementById("displayApproved7");
+
+// Function to update Day 7 "Used On" placeholder and save it in local storage
+function updateUsedOn7() {
+    const enteredValue = usedOnInput7.value;
+    displayUsedOn7.textContent = enteredValue;
+    localStorage.setItem("enteredUsedOn7", enteredValue);
+}
+
+// Function to update Day 7 "Spent" placeholder and save it in local storage
+function updateSpent7() {
+    const selectedValue = spentSelect7.value;
+    displaySpent7.textContent = selectedValue;
+    localStorage.setItem("selectedSpent7", selectedValue);
+}
+
+// Function to update Day 7 "Available Money" placeholder and save it in local storage
+function updateAvailableMoney7() {
+    const enteredValue = availableMoneyInput7.value;
+    displayAvailableMoney7.textContent = enteredValue;
+    localStorage.setItem("enteredAvailableMoney7", enteredValue);
+}
+
+// Function to update Day 7 "Approved" placeholder and save it in local storage
+function updateApproved7() {
+    const isChecked = approvedCheckbox7.checked;
+    displayApproved7.textContent = isChecked ? "Yes" : "No";
+    localStorage.setItem("isCheckedApproved7", isChecked);
+}
+
+// Retrieve Day 7 values from local storage when the page loads
+window.addEventListener("load", function () {
+    const savedUsedOn7 = localStorage.getItem("enteredUsedOn7");
+    if (savedUsedOn7) {
+        usedOnInput7.value = savedUsedOn7;
+        updateUsedOn7();
+    }
+
+    const savedSpent7 = localStorage.getItem("selectedSpent7");
+    if (savedSpent7) {
+        spentSelect7.value = savedSpent7;
+        updateSpent7();
+    }
+
+    const savedAvailableMoney7 = localStorage.getItem("enteredAvailableMoney7");
+    if (savedAvailableMoney7) {
+        availableMoneyInput7.value = savedAvailableMoney7;
+        updateAvailableMoney7();
+    }
+
+    const savedApproved7 = localStorage.getItem("isCheckedApproved7");
+    if (savedApproved7) {
+        approvedCheckbox7.checked = savedApproved7 === "true";
+        updateApproved7();
+    }
+});
+
+// Add event listeners to capture changes in input fields for Day 7
+usedOnInput7.addEventListener("input", updateUsedOn7);
+spentSelect7.addEventListener("change", updateSpent7);
+availableMoneyInput7.addEventListener("input", updateAvailableMoney7);
+approvedCheckbox7.addEventListener("change", updateApproved7);
+// Get references to the input elements and placeholders for Day 6
+const usedOnInput6 = document.getElementById("usedOn6");
+const displayUsedOn6 = document.getElementById("displayUsedOn6");
+const spentSelect6 = document.getElementById("spent6");
+const displaySpent6 = document.getElementById("displaySpent6");
+const availableMoneyInput6 = document.getElementById("availableMoney6");
+const displayAvailableMoney6 = document.getElementById("displayAvailableMoney6");
+const approvedCheckbox6 = document.getElementById("approved6");
+const displayApproved6 = document.getElementById("displayApproved6");
+
+// Function to update Day 6 "Used On" placeholder and save it in local storage
+function updateUsedOn6() {
+    const enteredValue = usedOnInput6.value;
+    displayUsedOn6.textContent = enteredValue;
+    localStorage.setItem("enteredUsedOn6", enteredValue);
+}
+
+// Function to update Day 6 "Spent" placeholder and save it in local storage
+function updateSpent6() {
+    const selectedValue = spentSelect6.value;
+    displaySpent6.textContent = selectedValue;
+    localStorage.setItem("selectedSpent6", selectedValue);
+}
+
+// Function to update Day 6 "Available Money" placeholder and save it in local storage
+function updateAvailableMoney6() {
+    const enteredValue = availableMoneyInput6.value;
+    displayAvailableMoney6.textContent = enteredValue;
+    localStorage.setItem("enteredAvailableMoney6", enteredValue);
+}
+
+// Function to update Day 6 "Approved" placeholder and save it in local storage
+function updateApproved6() {
+    const isChecked = approvedCheckbox6.checked;
+    displayApproved6.textContent = isChecked ? "Yes" : "No";
+    localStorage.setItem("isCheckedApproved6", isChecked);
+}
+
+// Retrieve Day 6 values from local storage when the page loads
+window.addEventListener("load", function () {
+    const savedUsedOn6 = localStorage.getItem("enteredUsedOn6");
+    if (savedUsedOn6) {
+        usedOnInput6.value = savedUsedOn6;
+        updateUsedOn6();
+    }
+
+    const savedSpent6 = localStorage.getItem("selectedSpent6");
+    if (savedSpent6) {
+        spentSelect6.value = savedSpent6;
+        updateSpent6();
+    }
+
+    const savedAvailableMoney6 = localStorage.getItem("enteredAvailableMoney6");
+    if (savedAvailableMoney6) {
+        availableMoneyInput6.value = savedAvailableMoney6;
+        updateAvailableMoney6();
+    }
+
+    const savedApproved6 = localStorage.getItem("isCheckedApproved6");
+    if (savedApproved6) {
+        approvedCheckbox6.checked = savedApproved6 === "true";
+        updateApproved6();
+    }
+});
+
+// Add event listeners to capture changes in input fields for Day 6
+usedOnInput6.addEventListener("input", updateUsedOn6);
+spentSelect6.addEventListener("change", updateSpent6);
+availableMoneyInput6.addEventListener("input", updateAvailableMoney6);
+approvedCheckbox6.addEventListener("change", updateApproved6);
+
+
+// Get references to the input elements and placeholders for Day 8
+const usedOnInput8 = document.getElementById("usedOn8");
+const displayUsedOn8 = document.getElementById("displayUsedOn8");
+const spentSelect8 = document.getElementById("spent8");
+const displaySpent8 = document.getElementById("displaySpent8");
+const availableMoneyInput8 = document.getElementById("availableMoney8");
+const displayAvailableMoney8 = document.getElementById("displayAvailableMoney8");
+const approvedCheckbox8 = document.getElementById("approved8");
+const displayApproved8 = document.getElementById("displayApproved8");
+
+// Function to update Day 8 "Used On" placeholder and save it in local storage
+function updateUsedOn8() {
+    const enteredValue = usedOnInput8.value;
+    displayUsedOn8.textContent = enteredValue;
+    localStorage.setItem("enteredUsedOn8", enteredValue);
+}
+
+// Function to update Day 8 "Spent" placeholder and save it in local storage
+function updateSpent8() {
+    const selectedValue = spentSelect8.value;
+    displaySpent8.textContent = selectedValue;
+    localStorage.setItem("selectedSpent8", selectedValue);
+}
+
+// Function to update Day 8 "Available Money" placeholder and save it in local storage
+function updateAvailableMoney8() {
+    const enteredValue = availableMoneyInput8.value;
+    displayAvailableMoney8.textContent = enteredValue;
+    localStorage.setItem("enteredAvailableMoney8", enteredValue);
+}
+
+// Function to update Day 8 "Approved" placeholder and save it in local storage
+function updateApproved8() {
+    const isChecked = approvedCheckbox8.checked;
+    displayApproved8.textContent = isChecked ? "Yes" : "No";
+    localStorage.setItem("isCheckedApproved8", isChecked);
+}
+
+// Retrieve Day 8 values from local storage when the page loads
+window.addEventListener("load", function () {
+    const savedUsedOn8 = localStorage.getItem("enteredUsedOn8");
+    if (savedUsedOn8) {
+        usedOnInput8.value = savedUsedOn8;
+        updateUsedOn8();
+    }
+
+    const savedSpent8 = localStorage.getItem("selectedSpent8");
+    if (savedSpent8) {
+        spentSelect8.value = savedSpent8;
+        updateSpent8();
+    }
+
+    const savedAvailableMoney8 = localStorage.getItem("enteredAvailableMoney8");
+    if (savedAvailableMoney8) {
+        availableMoneyInput8.value = savedAvailableMoney8;
+        updateAvailableMoney8();
+    }
+
+    const savedApproved8 = localStorage.getItem("isCheckedApproved8");
+    if (savedApproved8) {
+        approvedCheckbox8.checked = savedApproved8 === "true";
+        updateApproved8();
+    }
+});
+
+// Add event listeners to capture changes in input fields for Day 8
+usedOnInput8.addEventListener("input", updateUsedOn8);
+spentSelect8.addEventListener("change", updateSpent8);
+availableMoneyInput8.addEventListener("input", updateAvailableMoney8);
+approvedCheckbox8.addEventListener("change", updateApproved8);
+
+
+// Get references to the input elements and placeholders for Day 9
+const usedOnInput9 = document.getElementById("usedOn9");
+const displayUsedOn9 = document.getElementById("displayUsedOn9");
+const spentSelect9 = document.getElementById("spent9");
+const displaySpent9 = document.getElementById("displaySpent9");
+const availableMoneyInput9 = document.getElementById("availableMoney9");
+const displayAvailableMoney9 = document.getElementById("displayAvailableMoney9");
+const approvedCheckbox9 = document.getElementById("approved9");
+const displayApproved9 = document.getElementById("displayApproved9");
+
+// Function to update Day 9 "Used On" placeholder and save it in local storage
+function updateUsedOn9() {
+    const enteredValue = usedOnInput9.value;
+    displayUsedOn9.textContent = enteredValue;
+    localStorage.setItem("enteredUsedOn9", enteredValue);
+}
+
+// Function to update Day 9 "Spent" placeholder and save it in local storage
+function updateSpent9() {
+    const selectedValue = spentSelect9.value;
+    displaySpent9.textContent = selectedValue;
+    localStorage.setItem("selectedSpent9", selectedValue);
+}
+
+// Function to update Day 9 "Available Money" placeholder and save it in local storage
+function updateAvailableMoney9() {
+    const enteredValue = availableMoneyInput9.value;
+    displayAvailableMoney9.textContent = enteredValue;
+    localStorage.setItem("enteredAvailableMoney9", enteredValue);
+}
+
+// Function to update Day 9 "Approved" placeholder and save it in local storage
+function updateApproved9() {
+    const isChecked = approvedCheckbox9.checked;
+    displayApproved9.textContent = isChecked ? "Yes" : "No";
+    localStorage.setItem("isCheckedApproved9", isChecked);
+}
+
+// Retrieve Day 9 values from local storage when the page loads
+window.addEventListener("load", function () {
+    const savedUsedOn9 = localStorage.getItem("enteredUsedOn9");
+    if (savedUsedOn9) {
+        usedOnInput9.value = savedUsedOn9;
+        updateUsedOn9();
+    }
+
+    const savedSpent9 = localStorage.getItem("selectedSpent9");
+    if (savedSpent9) {
+        spentSelect9.value = savedSpent9;
+        updateSpent9();
+    }
+
+    const savedAvailableMoney9 = localStorage.getItem("enteredAvailableMoney9");
+    if (savedAvailableMoney9) {
+        availableMoneyInput9.value = savedAvailableMoney9;
+        updateAvailableMoney9();
+    }
+
+    const savedApproved9 = localStorage.getItem("isCheckedApproved9");
+    if (savedApproved9) {
+        approvedCheckbox9.checked = savedApproved9 === "true";
+        updateApproved9();
+    }
+});
+
+// Add event listeners to capture changes in input fields for Day 9
+usedOnInput9.addEventListener("input", updateUsedOn9);
+spentSelect9.addEventListener("change", updateSpent9);
+availableMoneyInput9.addEventListener("input", updateAvailableMoney9);
+approvedCheckbox9.addEventListener("change", updateApproved9);
+// Get references to the input elements and placeholders for Day 10
+const usedOnInput10 = document.getElementById("usedOn10");
+const displayUsedOn10 = document.getElementById("displayUsedOn10");
+const spentSelect10 = document.getElementById("spent10");
+const displaySpent10 = document.getElementById("displaySpent10");
+const availableMoneyInput10 = document.getElementById("availableMoney10");
+const displayAvailableMoney10 = document.getElementById("displayAvailableMoney10");
+const approvedCheckbox10 = document.getElementById("approved10");
+const displayApproved10 = document.getElementById("displayApproved10");
+
+// Function to update Day 10 "Used On" placeholder and save it in local storage
+function updateUsedOn10() {
+    const enteredValue = usedOnInput10.value;
+    displayUsedOn10.textContent = enteredValue;
+    localStorage.setItem("enteredUsedOn10", enteredValue);
+}
+
+// Function to update Day 10 "Spent" placeholder and save it in local storage
+function updateSpent10() {
+    const selectedValue = spentSelect10.value;
+    displaySpent10.textContent = selectedValue;
+    localStorage.setItem("selectedSpent10", selectedValue);
+}
+
+// Function to update Day 10 "Available Money" placeholder and save it in local storage
+function updateAvailableMoney10() {
+    const enteredValue = availableMoneyInput10.value;
+    displayAvailableMoney10.textContent = enteredValue;
+    localStorage.setItem("enteredAvailableMoney10", enteredValue);
+}
+
+// Function to update Day 10 "Approved" placeholder and save it in local storage
+function updateApproved10() {
+    const isChecked = approvedCheckbox10.checked;
+    displayApproved10.textContent = isChecked ? "Yes" : "No";
+    localStorage.setItem("isCheckedApproved10", isChecked);
+}
+
+// Retrieve Day 10 values from local storage when the page loads
+window.addEventListener("load", function () {
+    const savedUsedOn10 = localStorage.getItem("enteredUsedOn10");
+    if (savedUsedOn10) {
+        usedOnInput10.value = savedUsedOn10;
+        updateUsedOn10();
+    }
+
+    const savedSpent10 = localStorage.getItem("selectedSpent10");
+    if (savedSpent10) {
+        spentSelect10.value = savedSpent10;
+        updateSpent10();
+    }
+
+    const savedAvailableMoney10 = localStorage.getItem("enteredAvailableMoney10");
+    if (savedAvailableMoney10) {
+        availableMoneyInput10.value = savedAvailableMoney10;
+        updateAvailableMoney10();
+    }
+
+    const savedApproved10 = localStorage.getItem("isCheckedApproved10");
+    if (savedApproved10) {
+        approvedCheckbox10.checked = savedApproved10 === "true";
+        updateApproved10();
+    }
+});
+
+// Add event listeners to capture changes in input fields for Day 10
+usedOnInput10.addEventListener("input", updateUsedOn10);
+spentSelect10.addEventListener("change", updateSpent10);
+availableMoneyInput10.addEventListener("input", updateAvailableMoney10);
+approvedCheckbox10.addEventListener("change", updateApproved10);
+
+// Continue with similar code for Days 11 to 15...
+// Get references to the input elements and placeholders for Day 11
+const usedOnInput11 = document.getElementById("usedOn11");
+const displayUsedOn11 = document.getElementById("displayUsedOn11");
+const spentSelect11 = document.getElementById("spent11");
+const displaySpent11 = document.getElementById("displaySpent11");
+const availableMoneyInput11 = document.getElementById("availableMoney11");
+const displayAvailableMoney11 = document.getElementById("displayAvailableMoney11");
+const approvedCheckbox11 = document.getElementById("approved11");
+const displayApproved11 = document.getElementById("displayApproved11");
+
+// Function to update Day 11 "Used On" placeholder and save it in local storage
+function updateUsedOn11() {
+    const enteredValue = usedOnInput11.value;
+    displayUsedOn11.textContent = enteredValue;
+    localStorage.setItem("enteredUsedOn11", enteredValue);
+}
+
+// Function to update Day 11 "Spent" placeholder and save it in local storage
+function updateSpent11() {
+    const selectedValue = spentSelect11.value;
+    displaySpent11.textContent = selectedValue;
+    localStorage.setItem("selectedSpent11", selectedValue);
+}
+
+// Function to update Day 11 "Available Money" placeholder and save it in local storage
+function updateAvailableMoney11() {
+    const enteredValue = availableMoneyInput11.value;
+    displayAvailableMoney11.textContent = enteredValue;
+    localStorage.setItem("enteredAvailableMoney11", enteredValue);
+}
+
+// Function to update Day 11 "Approved" placeholder and save it in local storage
+function updateApproved11() {
+    const isChecked = approvedCheckbox11.checked;
+    displayApproved11.textContent = isChecked ? "Yes" : "No";
+    localStorage.setItem("isCheckedApproved11", isChecked);
+}
+
+// Retrieve Day 11 values from local storage when the page loads
+window.addEventListener("load", function () {
+    const savedUsedOn11 = localStorage.getItem("enteredUsedOn11");
+    if (savedUsedOn11) {
+        usedOnInput11.value = savedUsedOn11;
+        updateUsedOn11();
+    }
+
+    const savedSpent11 = localStorage.getItem("selectedSpent11");
+    if (savedSpent11) {
+        spentSelect11.value = savedSpent11;
+        updateSpent11();
+    }
+
+    const savedAvailableMoney11 = localStorage.getItem("enteredAvailableMoney11");
+    if (savedAvailableMoney11) {
+        availableMoneyInput11.value = savedAvailableMoney11;
+        updateAvailableMoney11();
+    }
+
+    const savedApproved11 = localStorage.getItem("isCheckedApproved11");
+    if (savedApproved11) {
+        approvedCheckbox11.checked = savedApproved11 === "true";
+        updateApproved11();
+    }
+});
+
+// Add event listeners to capture changes in input fields for Day 11
+usedOnInput11.addEventListener("input", updateUsedOn11);
+spentSelect11.addEventListener("change", updateSpent11);
+availableMoneyInput11.addEventListener("input", updateAvailableMoney11);
+approvedCheckbox11.addEventListener("change", updateApproved11);
+
+// Continue with similar code for Days 12 and 13...
+// Get references to the input elements and placeholders for Day 12
+const usedOnInput12 = document.getElementById("usedOn12");
+const displayUsedOn12 = document.getElementById("displayUsedOn12");
+const spentSelect12 = document.getElementById("spent12");
+const displaySpent12 = document.getElementById("displaySpent12");
+const availableMoneyInput12 = document.getElementById("availableMoney12");
+const displayAvailableMoney12 = document.getElementById("displayAvailableMoney12");
+const approvedCheckbox12 = document.getElementById("approved12");
+const displayApproved12 = document.getElementById("displayApproved12");
+
+// Function to update Day 12 "Used On" placeholder and save it in local storage
+function updateUsedOn12() {
+    const enteredValue = usedOnInput12.value;
+    displayUsedOn12.textContent = enteredValue;
+    localStorage.setItem("enteredUsedOn12", enteredValue);
+}
+
+// Function to update Day 12 "Spent" placeholder and save it in local storage
+function updateSpent12() {
+    const selectedValue = spentSelect12.value;
+    displaySpent12.textContent = selectedValue;
+    localStorage.setItem("selectedSpent12", selectedValue);
+}
+
+// Function to update Day 12 "Available Money" placeholder and save it in local storage
+function updateAvailableMoney12() {
+    const enteredValue = availableMoneyInput12.value;
+    displayAvailableMoney12.textContent = enteredValue;
+    localStorage.setItem("enteredAvailableMoney12", enteredValue);
+}
+
+// Function to update Day 12 "Approved" placeholder and save it in local storage
+function updateApproved12() {
+    const isChecked = approvedCheckbox12.checked;
+    displayApproved12.textContent = isChecked ? "Yes" : "No";
+    localStorage.setItem("isCheckedApproved12", isChecked);
+}
+
+// Retrieve Day 12 values from local storage when the page loads
+window.addEventListener("load", function () {
+    const savedUsedOn12 = localStorage.getItem("enteredUsedOn12");
+    if (savedUsedOn12) {
+        usedOnInput12.value = savedUsedOn12;
+        updateUsedOn12();
+    }
+
+    const savedSpent12 = localStorage.getItem("selectedSpent12");
+    if (savedSpent12) {
+        spentSelect12.value = savedSpent12;
+        updateSpent12();
+    }
+
+    const savedAvailableMoney12 = localStorage.getItem("enteredAvailableMoney12");
+    if (savedAvailableMoney12) {
+        availableMoneyInput12.value = savedAvailableMoney12;
+        updateAvailableMoney12();
+    }
+
+    const savedApproved12 = localStorage.getItem("isCheckedApproved12");
+    if (savedApproved12) {
+        approvedCheckbox12.checked = savedApproved12 === "true";
+        updateApproved12();
+    }
+});
+
+// Add event listeners to capture changes in input fields for Day 12
+usedOnInput12.addEventListener("input", updateUsedOn12);
+spentSelect12.addEventListener("change", updateSpent12);
+availableMoneyInput12.addEventListener("input", updateAvailableMoney12);
+approvedCheckbox12.addEventListener("change", updateApproved12);
+
+// Continue with similar code for Day 13...
+// Get references to the input elements and placeholders for Day 13
+const usedOnInput13 = document.getElementById("usedOn13");
+const displayUsedOn13 = document.getElementById("displayUsedOn13");
+const spentSelect13 = document.getElementById("spent13");
+const displaySpent13 = document.getElementById("displaySpent13");
+const availableMoneyInput13 = document.getElementById("availableMoney13");
+const displayAvailableMoney13 = document.getElementById("displayAvailableMoney13");
+const approvedCheckbox13 = document.getElementById("approved13");
+const displayApproved13 = document.getElementById("displayApproved13");
+
+// Function to update Day 13 "Used On" placeholder and save it in local storage
+function updateUsedOn13() {
+    const enteredValue = usedOnInput13.value;
+    displayUsedOn13.textContent = enteredValue;
+    localStorage.setItem("enteredUsedOn13", enteredValue);
+}
+
+// Function to update Day 13 "Spent" placeholder and save it in local storage
+function updateSpent13() {
+    const selectedValue = spentSelect13.value;
+    displaySpent13.textContent = selectedValue;
+    localStorage.setItem("selectedSpent13", selectedValue);
+}
+
+// Function to update Day 13 "Available Money" placeholder and save it in local storage
+function updateAvailableMoney13() {
+    const enteredValue = availableMoneyInput13.value;
+    displayAvailableMoney13.textContent = enteredValue;
+    localStorage.setItem("enteredAvailableMoney13", enteredValue);
+}
+
+// Function to update Day 13 "Approved" placeholder and save it in local storage
+function updateApproved13() {
+    const isChecked = approvedCheckbox13.checked;
+    displayApproved13.textContent = isChecked ? "Yes" : "No";
+    localStorage.setItem("isCheckedApproved13", isChecked);
+}
+
+// Retrieve Day 13 values from local storage when the page loads
+window.addEventListener("load", function () {
+    const savedUsedOn13 = localStorage.getItem("enteredUsedOn13");
+    if (savedUsedOn13) {
+        usedOnInput13.value = savedUsedOn13;
+        updateUsedOn13();
+    }
+
+    const savedSpent13 = localStorage.getItem("selectedSpent13");
+    if (savedSpent13) {
+        spentSelect13.value = savedSpent13;
+        updateSpent13();
+    }
+
+    const savedAvailableMoney13 = localStorage.getItem("enteredAvailableMoney13");
+    if (savedAvailableMoney13) {
+        availableMoneyInput13.value = savedAvailableMoney13;
+        updateAvailableMoney13();
+    }
+
+    const savedApproved13 = localStorage.getItem("isCheckedApproved13");
+    if (savedApproved13) {
+        approvedCheckbox13.checked = savedApproved13 === "true";
+        updateApproved13();
+    }
+});
+
+// Add event listeners to capture changes in input fields for Day 13
+usedOnInput13.addEventListener("input", updateUsedOn13);
+spentSelect13.addEventListener("change", updateSpent13);
+availableMoneyInput13.addEventListener("input", updateAvailableMoney13);
+approvedCheckbox13.addEventListener("change", updateApproved13);
+
+// Continue with similar code for Day 14 and Day 15...
+// Get references to the input elements and placeholders for Day 14
+const usedOnInput14 = document.getElementById("usedOn14");
+const displayUsedOn14 = document.getElementById("displayUsedOn14");
+const spentSelect14 = document.getElementById("spent14");
+const displaySpent14 = document.getElementById("displaySpent14");
+const availableMoneyInput14 = document.getElementById("availableMoney14");
+const displayAvailableMoney14 = document.getElementById("displayAvailableMoney14");
+const approvedCheckbox14 = document.getElementById("approved14");
+const displayApproved14 = document.getElementById("displayApproved14");
+
+// Function to update Day 14 "Used On" placeholder and save it in local storage
+function updateUsedOn14() {
+    const enteredValue = usedOnInput14.value;
+    displayUsedOn14.textContent = enteredValue;
+    localStorage.setItem("enteredUsedOn14", enteredValue);
+}
+
+// Function to update Day 14 "Spent" placeholder and save it in local storage
+function updateSpent14() {
+    const selectedValue = spentSelect14.value;
+    displaySpent14.textContent = selectedValue;
+    localStorage.setItem("selectedSpent14", selectedValue);
+}
+
+// Function to update Day 14 "Available Money" placeholder and save it in local storage
+function updateAvailableMoney14() {
+    const enteredValue = availableMoneyInput14.value;
+    displayAvailableMoney14.textContent = enteredValue;
+    localStorage.setItem("enteredAvailableMoney14", enteredValue);
+}
+
+// Function to update Day 14 "Approved" placeholder and save it in local storage
+function updateApproved14() {
+    const isChecked = approvedCheckbox14.checked;
+    displayApproved14.textContent = isChecked ? "Yes" : "No";
+    localStorage.setItem("isCheckedApproved14", isChecked);
+}
+
+// Retrieve Day 14 values from local storage when the page loads
+window.addEventListener("load", function () {
+    const savedUsedOn14 = localStorage.getItem("enteredUsedOn14");
+    if (savedUsedOn14) {
+        usedOnInput14.value = savedUsedOn14;
+        updateUsedOn14();
+    }
+
+    const savedSpent14 = localStorage.getItem("selectedSpent14");
+    if (savedSpent14) {
+        spentSelect14.value = savedSpent14;
+        updateSpent14();
+    }
+
+    const savedAvailableMoney14 = localStorage.getItem("enteredAvailableMoney14");
+    if (savedAvailableMoney14) {
+        availableMoneyInput14.value = savedAvailableMoney14;
+        updateAvailableMoney14();
+    }
+
+    const savedApproved14 = localStorage.getItem("isCheckedApproved14");
+    if (savedApproved14) {
+        approvedCheckbox14.checked = savedApproved14 === "true";
+        updateApproved14();
+    }
+});
+
+// Add event listeners to capture changes in input fields for Day 14
+usedOnInput14.addEventListener("input", updateUsedOn14);
+spentSelect14.addEventListener("change", updateSpent14);
+availableMoneyInput14.addEventListener("input", updateAvailableMoney14);
+approvedCheckbox14.addEventListener("change", updateApproved14);
+// Get references to the input elements and placeholders for Day 15
+const usedOnInput15 = document.getElementById("usedOn15");
+const displayUsedOn15 = document.getElementById("displayUsedOn15");
+const spentSelect15 = document.getElementById("spent15");
+const displaySpent15 = document.getElementById("displaySpent15");
+const availableMoneyInput15 = document.getElementById("availableMoney15");
+const displayAvailableMoney15 = document.getElementById("displayAvailableMoney15");
+const approvedCheckbox15 = document.getElementById("approved15");
+const displayApproved15 = document.getElementById("displayApproved15");
+
+// Function to update Day 15 "Used On" placeholder and save it in local storage
+function updateUsedOn15() {
+    const enteredValue = usedOnInput15.value;
+    displayUsedOn15.textContent = enteredValue;
+    localStorage.setItem("enteredUsedOn15", enteredValue);
+}
+
+// Function to update Day 15 "Spent" placeholder and save it in local storage
+function updateSpent15() {
+    const selectedValue = spentSelect15.value;
+    displaySpent15.textContent = selectedValue;
+    localStorage.setItem("selectedSpent15", selectedValue);
+}
+
+// Function to update Day 15 "Available Money" placeholder and save it in local storage
+function updateAvailableMoney15() {
+    const enteredValue = availableMoneyInput15.value;
+    displayAvailableMoney15.textContent = enteredValue;
+    localStorage.setItem("enteredAvailableMoney15", enteredValue);
+}
+
+// Function to update Day 15 "Approved" placeholder and save it in local storage
+function updateApproved15() {
+    const isChecked = approvedCheckbox15.checked;
+    displayApproved15.textContent = isChecked ? "Yes" : "No";
+    localStorage.setItem("isCheckedApproved15", isChecked);
+}
+
+// Retrieve Day 15 values from local storage when the page loads
+window.addEventListener("load", function () {
+    const savedUsedOn15 = localStorage.getItem("enteredUsedOn15");
+    if (savedUsedOn15) {
+        usedOnInput15.value = savedUsedOn15;
+        updateUsedOn15();
+    }
+
+    const savedSpent15 = localStorage.getItem("selectedSpent15");
+    if (savedSpent15) {
+        spentSelect15.value = savedSpent15;
+        updateSpent15();
+    }
+
+    const savedAvailableMoney15 = localStorage.getItem("enteredAvailableMoney15");
+    if (savedAvailableMoney15) {
+        availableMoneyInput15.value = savedAvailableMoney15;
+        updateAvailableMoney15();
+    }
+
+    const savedApproved15 = localStorage.getItem("isCheckedApproved15");
+    if (savedApproved15) {
+        approvedCheckbox15.checked = savedApproved15 === "true";
+        updateApproved15();
+    }
+});
+
+// Add event listeners to capture changes in input fields for Day 15
+usedOnInput15.addEventListener("input", updateUsedOn15);
+spentSelect15.addEventListener("change", updateSpent15);
+availableMoneyInput15.addEventListener("input", updateAvailableMoney15);
+approvedCheckbox15.addEventListener("change", updateApproved15);
+</script>
+
+</body>
+</html>

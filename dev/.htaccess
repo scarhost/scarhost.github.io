@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteRule ^sep$ sep.html [L]
+RewriteRule ^jan$ jan.html [L]
+RewriteRule ^des$ sep.html [L]
+RewriteRule ^test$ test.html [L]
+RewriteRule ^bud$ myapp/budget.html [L]
+RewriteRule ^fiverr$ Fiverr/fiverr.html [L]
+RewriteRule ^chat$ chat/index.html [L]
+RewriteRule ^test$ test/.next [L]
