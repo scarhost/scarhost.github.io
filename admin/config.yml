@@ -1,0 +1,17 @@
+backend:
+  name: git-gateway
+  branch: main # Update this to match your default branch
+
+media_folder: "assets/uploads" # Folder for uploaded files
+public_folder: "/assets/uploads" # Folder used in the frontend
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "Home Page"
+        name: "index"
+        file: "index.html" # Path to the file to edit
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body", name: "body", widget: "markdown" }
